@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/WHITE"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView 
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:src="@drawable/ic_hardware_keyboard_arrow_left_cyan"
+                />
+
+            <Button
+                android:id="@+id/btn_home"
+			    android:layout_width="wrap_content"
+			    android:layout_height="match_parent"
+                android:background="@null"
+                android:onClick="onClick"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="-15dp"
+                android:text="@string/title_home"
+                android:textColor="@color/CYAN" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_exam"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/txt_selection_exam_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/selection_title"
+            android:textColor="@color/BLACK"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_selection_practice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/selector_btn_select"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="@string/selection_practice"
+            android:textColor="@color/WHITE" />
+
+        <Button
+            android:id="@+id/btn_selection_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/selector_btn_select"
+            android:onClick="onClick"
+            android:text="@string/selection_exam"
+            android:textColor="@color/WHITE" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_sample_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/txt_selection_sample_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/selection_sample_title"
+            android:textColor="@color/BLACK"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btn_selection_sample_intermediate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/selector_btn_select"
+            android:onClick="onClick"
+            android:text="@string/selection_sample_topik2"
+            android:textColor="@color/WHITE" />
+        <Button
+            android:id="@+id/btn_selection_sample_beginner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/selector_btn_select"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="@string/selection_sample_topik1"
+            android:textColor="@color/WHITE" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

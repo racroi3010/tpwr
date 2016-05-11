@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Topik Writing</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_name">TOPIK Writing</string>
+    <string name="description">Media Controls</string>
+    <string name="selection_sample">SAMPLE TOPIK TEST</string>
+    <string name="home_take_sample_test">Take Your Sample Test</string>
+
+    <!-- Setting -->
+    <string name="title_home">Home</string>
+    <string name="title_setting">Settings</string>
+    <string name="title_result">Result</string>
+    <string name="setting_play_audio">Auto Play Audio</string>
+    <string name="setting_auto">Auto</string>
+    <string name="setting_manual">Manual</string>
+    <string name="setting_rate">Rate this app</string>
+    <string name="setting_share">Share this app</string>
+    <string name="setting_message">\tThis application isn\'t only suitable for the people who pursues a Topik certificate, but also good for practice reading Korean commonly. Hope all of you will have a good time in Korean. If there is any wrong content, please feel free to contact me via doanhuunoi@gmail.com.</string>
+    <string name="setting_practice">Practice</string>
+    <string name="setting_display_hint">Display Hint Text</string>
+    <string name="setting_app">App</string>
+    <string name="setting_language">Language</string>
+
+    <!-- Question -->
+    <string name="question_previous">Previous</string>
+    <string name="question_next">Next</string>
+    <string name="question_submit">Submit</string>
+    <string name="question_result">Result</string>
+    <string name="question_practice">Practice</string>
+    <string name="question_review">Review</string>
+    <string name="question_test">Test</string>
+    <string name="question_audio_download">Audio file is not valid. Click to download</string>
+
+    <!-- Result -->
+    <string name="result_total">Total: </string>
+    <string name="result_correct">Correct: </string>
+    <string name="result_wrong">Wrong: </string>
+    <string name="result_no_answer">No Answer: </string>
+    <string name="result_score">Score: </string>
+    <string name="result_awesome">Awesome</string>
+    <string name="result_well_done">Well Done</string>
+    <string name="result_more_practice">Try To Do More Practise</string>
+    <string name="result_bar_question">Question</string>
+    <string name="result_bar_choice">Your Choice</string>
+    <string name="result_bar_answer">Answer</string>
+    <string name="result_bar_score">Score</string>
+    <string name="result_click_item">(Click question to review)</string>
+
+    <!-- Select -->
+    <string name="selection_title">TOPIK Writing %1$s회-%2$s</string>
+    <string name="selection_practice">Practice</string>
+    <string name="selection_exam">Take Your Test</string>
+    <string name="selection_sample_title">TOPIK Writing\nSample</string>
+    <string name="selection_sample_topik1">TOPIK I</string>
+    <string name="selection_sample_topik2">TOPIK II</string>
+
+    <!-- Exam -->
+    <string name="exam_title">TOPIK - %1$d회</string>
+    <string name="exam_level_title">%1$s</string>
+    <string name="exam_level_point">Point\n%1$s/%2$s</string>
+    
+    <!-- Dialog -->
+	<string name="dialog_title_caution">Download data files?</string>
+	<string name="dialog_title_result">Result</string>
+	<string name="dialog_ask_download_data">Warning: Data files will be downloaded.</string>
+    <string name="dialog_yes">YES</string>
+    <string name="dialog_no">NO</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_caution">CAUTION</string>
+    <string name="dialog_ask_download_big_audio">Warning: Audio files are huge.\nIt may take several minutes to download.</string>
+    <string name="dialog_ask_downloading">Data files are being downloaded\nPlease wait for a minute.</string>
+    <string name="dialog_ask_queued">Data files are queued\nPlease wait for other download processes.</string>
+    <string name="dialog_data_not_exists">Exam\'s data does not exist. \nPlease back to main screen and start to download.</string>
+	<string name="dialog_file_size">Size of file: </string>	
+	<string name="dialog_file_progress">Progress: </string>
+    <string-array name="array_language">
+        <item>English</item>
+        <item>Tiếng Việt</item>
+        <item>한국어</item>
+    </string-array>
+
+    <!-- Ads -->
+    <string name="banner_ad_id" translatable="false">ca-app-pub-4421553447993889/2940389473</string>
+    <string name="interstitialAd_id" translatable="false">ca-app-pub-4421553447993889/4417122678</string>
+
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Luyện Viết Topik</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Cài đặt</string>
+    <string name="title_name">Luyện Viết Topik</string>
+    <string name="description">Media Controls</string>
+    <string name="selection_sample">Bài Thi Mẫu</string>
+    <string name="home_take_sample_test">Làm Bài Thi Mẫu</string>
+
+    <!-- Setting -->
+    <string name="title_home">Màn hình chính</string>
+    <string name="title_setting">Cài Đặt</string>
+    <string name="title_result">Kết Quả</string>
+    <string name="setting_play_audio">Tự động phát audio</string>
+    <string name="setting_auto">Tự động</string>
+    <string name="setting_manual">Bằng tay</string>
+    <string name="setting_rate">Thích ứng dụng này</string>
+    <string name="setting_share">Chia sẻ ứng dụng</string>
+    <string name="setting_message">\tỨng dụng này không chỉ phù hợp cho những người luyện thi Topik, mà còn rất tốt cho việc luyện viết tiếng Hàn. Hy vọng tất cả các bạn sẽ có những thời gian bổ ích trong việc học tiếng Hàn. Nếu có bất cứ sai sót nào trong nội dung, xin vui lòng liên hệ qua email doanhuunoi@gmail.com.</string>
+    <string name="setting_practice">Luyện tập</string>
+    <string name="setting_display_hint">Hiển thị gợi ý</string>
+    <string name="setting_app">Ứng dụng</string>
+    <string name="setting_language">Ngôn ngữ</string>
+
+    <!-- Question -->
+    <string name="question_previous">Trước</string>
+    <string name="question_next">Tiếp</string>
+    <string name="question_submit">Nộp Bài</string>
+    <string name="question_result">Kết Quả</string>
+    <string name="question_practice">Luyện Tập</string>
+    <string name="question_review">Xem Lại</string>
+    <string name="question_test">Bài Thi</string>
+    <string name="question_audio_download">Tệp tin âm thanh chưa có hoặc không hợp lệ. Click để tải về</string>
+    <!-- Result -->
+    <string name="result_total">Tổng cộng: </string>
+    <string name="result_correct">Chính xác: </string>
+    <string name="result_wrong">Sai: </string>
+    <string name="result_no_answer">Không trả lời: </string>
+    <string name="result_score">Điểm số: </string>
+    <string name="result_awesome">Tuyệt Vời</string>
+    <string name="result_well_done">Bạn Làm Rất Tốt</string>
+    <string name="result_more_practice">Cố Gắng Luyện Tập Nhiều Hơn</string>
+    <string name="result_bar_question">Câu Hỏi</string>
+    <string name="result_bar_choice">Lựa Chọn</string>
+    <string name="result_bar_answer">Đáp Án</string>
+    <string name="result_bar_score">Điểm Số</string>
+    <string name="result_click_item">(Chọn câu hỏi để xem lại)</string>
+
+    <!-- Select -->
+    <string name="selection_title">Luyện Viết Topik Lần Thi %1$s-%2$s</string>
+    <string name="selection_practice">Luyện Tập</string>
+    <string name="selection_exam">Làm Bài Thi</string>
+    <string name="selection_sample_title">Luyện Viết Topik\nBài Mẫu</string>
+    <string name="selection_sample_topik1">TOPIK I</string>
+    <string name="selection_sample_topik2">TOPIK II</string>
+
+    <!-- Exam -->
+    <string name="exam_title">TOPIK Lần - %1$d</string>
+    <string name="exam_level_title">%1$s</string>
+    <string name="exam_level_point">Điểm \n%1$s/%2$s</string>
+
+    <!-- Dialog -->
+    <string name="dialog_title_caution">Tải Dữ Liệu?</string>
+    <string name="dialog_title_result">Kết Quả</string>
+    <string name="dialog_ask_download_data">Lưu Ý: Các tệp tin dữ liệu sẽ được tải về.</string>
+    <string name="dialog_yes">Có</string>
+    <string name="dialog_no">Không</string>
+    <string name="dialog_ok">Đống ý</string>
+    <string name="dialog_caution">Lưu Ý</string>
+    <string name="dialog_ask_download_big_audio">Lưu Ý: Kích thước tệp tin audio khá lớn. Việc tải có thể mất vài phút.</string>
+    <string name="dialog_ask_downloading">Dữ liệu đang được tải\nVui lòng đợi ít phút.</string>
+    <string name="dialog_ask_queued">Dữ liệu đang đợi để tải\nVui lòng đợi các tiến trình tải khác hoàn thành.</string>
+    <string name="dialog_data_not_exists">Dữ liệu bài thi không tồn tại. \nVui lòng quay lại màn hình chính để tải.</string>
+    <string name="dialog_file_size">Kích thước tệp tin: </string>
+    <string name="dialog_file_progress">Tiến trình: </string>
+
+    <string-array name="array_language">
+        <item>English</item>
+        <item>Tiếng Việt</item>
+        <item>한국어</item>
+    </string-array>
+
+</resources>

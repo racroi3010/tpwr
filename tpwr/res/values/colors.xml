@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="WHITE">#ffffff</color>
+    <color name="BLACK">#000000</color>
+    <color name="GRAY_TITLE">#dee0e4</color>
+    <color name="GRAY_ICON">#565e67</color>
+    <color name="GRAY_UNDER_BAR">#9ca7ac</color>
+    <color name="GRAY_HINT">#5d5a5a</color>
+    <color name="WHITE_ALPHA">#50ffffff</color>
+    <color name="RED">#ff0000</color>
+    <color name="GREEN">#00ff00</color>
+    <color name="BLUE">#0000ff</color>
+    <color name="CYAN">#0297ff</color>
+    <color name="CYAN_BRIGHT">#97d3fc</color>
+
+    <!-- Switch -->
+    <color name="ksw_md_ripple_normal">#1E000000</color>
+    <color name="ksw_md_ripple_checked">#33019285</color>
+    <color name="ksw_md_solid_shadow">#33000000</color>
+    <color name="ksw_md_solid_normal">#ECECEC</color>
+    <color name="ksw_md_solid_checked">#019285</color>
+    <color name="ksw_md_solid_disable">#FFFFFF</color>
+    <color name="ksw_md_solid_checked_disable">#aaaaaa</color>
+
+</resources>
