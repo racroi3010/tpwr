@@ -33,7 +33,9 @@
     <string name="question_review">Review</string>
     <string name="question_test">Test</string>
     <string name="question_audio_download">Audio file is not valid. Click to download</string>
-
+    <string name="question_answer_save_ok">Save successfully</string>
+	<string name="question_answer_save_error">Failed to save</string>
+	
     <!-- Result -->
     <string name="result_total">Total: </string>
     <string name="result_correct">Correct: </string>

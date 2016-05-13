@@ -5,47 +5,42 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.hanaone.tpwr.adapter.DatabaseAdapter;
-import com.hanaone.tpwr.adapter.DownloadFileAdapter;
-import com.hanaone.tpwr.adapter.DownloadInfo;
-import com.hanaone.tpwr.adapter.DownloadListener;
-import com.hanaone.tpwr.adapter.ListAdapterListener;
-import com.hanaone.tpwr.db.ChoiceDataSet;
-import com.hanaone.tpwr.db.FileDataSet;
-import com.hanaone.tpwr.db.QuestionDataSet;
-import com.hanaone.tpwr.db.ResultDataSet;
-import com.hanaone.tpwr.db.SectionDataSet;
-import com.hanaone.tpwr.util.ImageUtils;
-import com.hanaone.tpwr.util.PreferenceHandler;
-
 import android.app.Dialog;
-import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.hanaone.tpwr.adapter.DatabaseAdapter;
+import com.hanaone.tpwr.adapter.DownloadFileAdapter;
+import com.hanaone.tpwr.adapter.DownloadInfo;
+import com.hanaone.tpwr.adapter.DownloadListener;
+import com.hanaone.tpwr.db.ChoiceDataSet;
+import com.hanaone.tpwr.db.FileDataSet;
+import com.hanaone.tpwr.db.QuestionDataSet;
+import com.hanaone.tpwr.db.SectionDataSet;
+import com.hanaone.tpwr.util.ImageUtils;
+import com.hanaone.tpwr.util.PreferenceHandler;
 
 public class QuestionSlideFragment extends Fragment implements DownloadListener {
 	private static final String ARG_PAGE = "page";
 	private static final String ARG_Listener = "listener";
 	private ArrayList<SectionDataSet> mSections;
-//	private boolean cheat;
+	private boolean isShowHint;
+	private boolean cheat;
+
 	public QuestionSlideFragment() {
 		
 	}
@@ -60,7 +55,7 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 		Bundle data = new Bundle();
 		data.putParcelableArrayList(ARG_PAGE, sections);
 		fragment.setArguments(data);
-		
+
 		return fragment;
 	}
 
@@ -69,6 +64,13 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 		super.onCreate(savedInstanceState);
 		mSections = getArguments().getParcelableArrayList(ARG_PAGE);
 		String mode = PreferenceHandler.getQuestionModePreference(getActivity());	
+		
+		cheat = false;
+		if(Constants.QUESTION_MODE_PRACTICE.equals(mode) 
+				|| Constants.QUESTION_MODE_REVIEW.equals(mode)){
+			isShowHint = PreferenceHandler.getHintDisplayPreference(getActivity());
+			cheat = true;
+		}					
 	}
 
 	@Override
@@ -131,22 +133,7 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 					
 					TextView txtNumber = (TextView) questionView.findViewById(R.id.txt_question_number);
 					TextView txtQuestionHint = (TextView) questionView.findViewById(R.id.txt_question_hint);
-					
-					final List<Button> btnAnswers = new ArrayList<Button>(2);
-					final List<EditText> edtAnswers = new ArrayList<EditText>(2);
-					final List<TextView> txtHints = new ArrayList<TextView>(2);
-					
-					
-					btnAnswers.add((Button) questionView.findViewById(R.id.btn_question_answer_1));
-					btnAnswers.add((Button) questionView.findViewById(R.id.btn_question_answer_2));
-					
-					edtAnswers.add((EditText) questionView.findViewById(R.id.edt_question_answer_1));
-					edtAnswers.add((EditText) questionView.findViewById(R.id.edt_question_answer_2));
-					
-					txtHints.add((TextView) questionView.findViewById(R.id.txt_question_answer_hint_1));
-					txtHints.add((TextView) questionView.findViewById(R.id.txt_question_answer_hint_2));
-					
-					
+
 					
 					TextView txtQuestionTxt = (TextView) questionView.findViewById(R.id.txt_question_txt);
 					ImageView imgQuestion = (ImageView) questionView.findViewById(R.id.img_question);					
@@ -192,12 +179,62 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 					txtNumber.setText(question.getNumber() + ". ");
 					
 					
+					
+					LinearLayout layoutQuestionAnswer = (LinearLayout) questionView.findViewById(R.id.layout_question_answer);
+									
+					
 					List<ChoiceDataSet> choices = question.getChoices();
 					if(choices != null){
-						for(int i = 0; i < 2; i ++){
+						for(int i = 0; i < choices.size(); i ++){
 							final ChoiceDataSet choice = choices.get(i);
-							btnAnswers.get(i).setText(choice.getLabel());
-							txtHints.get(i).setText(choice.getContent());
+							LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.layout_answer_multi, layoutQuestionAnswer, false);
+							
+							Button btnAnswer = (Button) layout.findViewById(R.id.btn_question_answer);
+							btnAnswer.setText(choice.getLabel());
+							if(choices.size() == 1){
+								btnAnswer.setVisibility(Button.GONE);
+							}
+							final TextView txtHint = (TextView) layout.findViewById(R.id.txt_question_answer_hint);							
+							txtHint.setText(choice.getContent());
+							
+							final Button btnHint = (Button) layout.findViewById(R.id.btn_question_answer_hint);
+							
+
+							if(cheat){
+								btnHint.setOnClickListener(new OnClickListener() {
+									
+									@Override
+									public void onClick(View arg0) {
+										if(txtHint.getVisibility() == TextView.VISIBLE){
+											txtHint.setVisibility(TextView.INVISIBLE);
+											btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);									
+										} else {
+											btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);
+											txtHint.setVisibility(TextView.VISIBLE);									
+										}
+									}
+								});
+								if(isShowHint){
+									btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);
+									txtHint.setVisibility(TextView.VISIBLE);
+								} else {
+									txtHint.setVisibility(TextView.INVISIBLE);
+									btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
+								}
+							}		
+							
+							final EditText edtAnswer = (EditText) layout.findViewById(R.id.edt_question_answer);
+							final Button btnSave = (Button) layout.findViewById(R.id.btn_question_answer_save);
+							btnSave.setOnClickListener(new OnClickListener() {
+								
+								@Override
+								public void onClick(View v) {
+									btnSave.setBackgroundResource(R.drawable.ic_action_done_cyan);
+									choice.setContent(edtAnswer.getText().toString());
+									onSave(new DatabaseAdapter(getContext()).updateChoice(choice));
+								}
+							});
+							layoutQuestionAnswer.addView(layout);
 						}		
 						
 					}
@@ -217,18 +254,27 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 		return sectionsView;
 	}
 	
-	private void onChoose(QuestionDataSet question, int btn
-			, List<Button> btns){
-		question.setChoice(btn);
-		for(int i = 0; i < btns.size(); i ++){
-			if((i + 1) == btn){
-				btns.get(i).setBackgroundResource(R.drawable.circle_number_black);	
-				btns.get(i).setTextColor(getActivity().getResources().getColor(R.color.WHITE));
-			} else {
-				btns.get(i).setBackgroundResource(R.drawable.circle_number_trans);	
-				btns.get(i).setTextColor(getActivity().getResources().getColor(R.color.BLACK));				
+	private void onSave(int result){
+		final Dialog dialog = new Dialog(getContext());
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.layout_dialog_ok);	
+		dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		dialog.findViewById(R.id.btn_dialog_ok).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
 			}
+		});		
+		
+		TextView txtContent = (TextView) dialog.findViewById(R.id.txt_dialog_content);
+		if(result > -1){
+			txtContent.setText(getResources().getString(R.string.question_answer_save_ok));
+		} else {
+			txtContent.setText(getResources().getString(R.string.question_answer_save_error));
 		}
+		
+		dialog.show();
 	}
 	public void showDownloadDialog(final FileDataSet file){
 		final Dialog dialog = new Dialog(getContext());

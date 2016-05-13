@@ -33,7 +33,9 @@
     <string name="question_review">검토</string>
     <string name="question_test">시험</string>
     <string name="question_audio_download">오디오 파일 없습니다. 다운로드를 위해 클릭하기 바랍니다.</string>
-
+    <string name="question_answer_save_ok">Save successfully</string>
+	<string name="question_answer_save_error">Failed to save</string>
+	
     <!-- Result -->
     <string name="result_total">총액: </string>
     <string name="result_correct">맞는 답안: </string>

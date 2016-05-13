@@ -9,7 +9,7 @@ public class PreferenceHandler extends Constants {
 	private static final String PREFERENCE_NAME = "TPRD";
 	
 //	private static final String AUDIO_AUTO_PLAY = "AUDIO_AUTO_PLAY";
-//	private static final String HINT_DISPLAY = "HINT_DISPLAY";
+	private static final String HINT_DISPLAY = "HINT_DISPLAY";
 	
 	private static final String LANGUAGE_POSITION = "LANGUAGE_POSITION";
 	
@@ -63,12 +63,12 @@ public class PreferenceHandler extends Constants {
 //		return getBooleanPreference(context, AUDIO_AUTO_PLAY);
 //	}
 //
-//	public static void setHintDisplayPreference(Context context, boolean value){
-//		setBooleanPreference(context, HINT_DISPLAY, value);
-//	}
-//	public static boolean getHintDisplayPreference(Context context){
-//		return getBooleanPreference(context, HINT_DISPLAY);
-//	}
+	public static void setHintDisplayPreference(Context context, boolean value){
+		setBooleanPreference(context, HINT_DISPLAY, value);
+	}
+	public static boolean getHintDisplayPreference(Context context){
+		return getBooleanPreference(context, HINT_DISPLAY);
+	}
 	
 	public static void setQuestionModePreference(Context context, String value){
 		setStringPreference(context, QUESTION_MODE, value);

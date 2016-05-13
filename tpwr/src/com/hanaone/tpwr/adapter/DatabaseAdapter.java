@@ -426,5 +426,16 @@ public class DatabaseAdapter{
 		}
 		return -1;
 	}
+	public int updateChoice(ChoiceDataSet choice){
+		if(choice == null) return -1;
+		
+		Choice choiceModel = (Choice) DatabaseUtils.pojo2Model(choice);
+		if(choiceModel != null){
+			return this.dbHelper.update(choiceModel);
+		}
+		
+		return -1;
+		
+	}
 	
 }

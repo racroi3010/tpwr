@@ -229,14 +229,14 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 				holder.txtHints = new ArrayList<TextView>(2);
 				
 				
-				holder.btnAnswers.add((Button) convertView.findViewById(R.id.btn_question_answer_1));
-				holder.btnAnswers.add((Button) convertView.findViewById(R.id.btn_question_answer_2));
-				
-				holder.edtAnswers.add((EditText) convertView.findViewById(R.id.edt_question_answer_1));
-				holder.edtAnswers.add((EditText) convertView.findViewById(R.id.edt_question_answer_2));
-				
-				holder.txtHints.add((TextView) convertView.findViewById(R.id.txt_question_answer_hint_1));
-				holder.txtHints.add((TextView) convertView.findViewById(R.id.txt_question_answer_hint_2));				
+//				holder.btnAnswers.add((Button) convertView.findViewById(R.id.btn_question_answer_1));
+//				holder.btnAnswers.add((Button) convertView.findViewById(R.id.btn_question_answer_2));
+//				
+//				holder.edtAnswers.add((EditText) convertView.findViewById(R.id.edt_question_answer_1));
+//				holder.edtAnswers.add((EditText) convertView.findViewById(R.id.edt_question_answer_2));
+//				
+//				holder.txtHints.add((TextView) convertView.findViewById(R.id.txt_question_answer_hint_1));
+//				holder.txtHints.add((TextView) convertView.findViewById(R.id.txt_question_answer_hint_2));				
 				
 				//holder.layoutHint = (LinearLayout) convertView.findViewById(R.id.layout_question_hint);
 				holder.txtQuestion = (TextView) convertView.findViewById(R.id.txt_question_txt);

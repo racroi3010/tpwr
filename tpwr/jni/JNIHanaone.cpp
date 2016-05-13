@@ -7,6 +7,6 @@
 JNIEXPORT jstring JNICALL Java_com_hanaone_jni_JNIHanaone_stringFromJNI
   (JNIEnv *jenv, jobject)
 {
-	jstring url = jenv->NewStringUTF("https://drive.google.com/uc?export=download&id=0Byaz20I0WF7YLUJZTkc2SnA3YVk");
+	jstring url = jenv->NewStringUTF("https://drive.google.com/uc?export=download&id=0Byaz20I0WF7YMk1FdF9RVmZRMVE");
 	return url;
 }

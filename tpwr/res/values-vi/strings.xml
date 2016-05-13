@@ -33,6 +33,9 @@
     <string name="question_review">Xem Lại</string>
     <string name="question_test">Bài Thi</string>
     <string name="question_audio_download">Tệp tin âm thanh chưa có hoặc không hợp lệ. Click để tải về</string>
+    <string name="question_answer_save_ok">Save successfully</string>
+	<string name="question_answer_save_error">Failed to save</string>    
+    
     <!-- Result -->
     <string name="result_total">Tổng cộng: </string>
     <string name="result_correct">Chính xác: </string>
