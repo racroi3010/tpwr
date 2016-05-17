@@ -56,6 +56,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			+ ChoiceEntry.COLUMN_NAME_CONTENT + TEXT_TYPE + COMMA_STEP
 			+ ChoiceEntry.COLUMN_FILE_ID + INTEGER_TYPE + COMMA_STEP
 			+ ChoiceEntry.COLUMN_QUESTION_ID + INTEGER_TYPE + COMMA_STEP
+			+ ChoiceEntry.COLUMN_NAME_ANSWER + TEXT_TYPE + COMMA_STEP
+			+ ChoiceEntry.COLUMN_NAME_GOAL_MIN + INTEGER_TYPE + COMMA_STEP
+			+ ChoiceEntry.COLUMN_NAME_GOAL_MAX + INTEGER_TYPE + COMMA_STEP
 			+ FOREIGN_KEY + " (" + ChoiceEntry.COLUMN_FILE_ID + ") REFERENCES " + FileExtraEntry.TABLE_NAME + "(" + FileExtraEntry._ID + ")" + COMMA_STEP
 			+ FOREIGN_KEY + " (" + ChoiceEntry.COLUMN_QUESTION_ID + ") REFERENCES " + QuestionEntry.TABLE_NAME + "(" + QuestionEntry._ID + ")"
 			+ ")";	
@@ -240,6 +243,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			values.put(ChoiceEntry.COLUMN_NAME_CONTENT, choice.getContent());
 			values.put(ChoiceEntry.COLUMN_FILE_ID, choice.getFile_id());
 			values.put(ChoiceEntry.COLUMN_QUESTION_ID, choice.getQuestion_id());
+			values.put(ChoiceEntry.COLUMN_NAME_ANSWER, choice.getAnswer());
+			values.put(ChoiceEntry.COLUMN_NAME_GOAL_MIN, choice.getGoalMin());
+			values.put(ChoiceEntry.COLUMN_NAME_GOAL_MAX, choice.getGoalMax());
 		}
 		
 		if(values != null){
@@ -343,6 +349,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			values.put(ChoiceEntry.COLUMN_NAME_CONTENT, choice.getContent());
 			values.put(ChoiceEntry.COLUMN_FILE_ID, choice.getFile_id());
 			values.put(ChoiceEntry.COLUMN_QUESTION_ID, choice.getQuestion_id());
+			values.put(ChoiceEntry.COLUMN_NAME_ANSWER, choice.getAnswer());
+			values.put(ChoiceEntry.COLUMN_NAME_GOAL_MIN, choice.getGoalMin());
+			values.put(ChoiceEntry.COLUMN_NAME_GOAL_MAX, choice.getGoalMax());
 		}
 		
 		if(values != null){
@@ -627,6 +636,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			choice.setContent(c.getString(4));
 			choice.setFile_id(c.getInt(5));
 			choice.setQuestion_id(c.getInt(6));
+			choice.setAnswer(c.getString(7));
+			choice.setGoalMin(c.getInt(8));
+			choice.setGoalMax(c.getInt(9));
 			
 			list.add(choice);
 		} while(c.moveToNext());

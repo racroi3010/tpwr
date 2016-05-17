@@ -36,14 +36,21 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 	private ListAdapterListener mListener;
 	private List<SectionDataSet> mDataSet;
 	private List<Item> mItems;
-
+	private boolean cheat;
+	private boolean isShowHint;
 	public ListSectionAdapter(Context mContext, ListAdapterListener mListener) {
 		this.mContext = mContext;
 		this.mListener = mListener;
 		this.mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		
 		String mode = PreferenceHandler.getQuestionModePreference(mContext);
-		
+		cheat = false;
+		if(Constants.QUESTION_MODE_PRACTICE.equals(mode) 
+				|| Constants.QUESTION_MODE_REVIEW.equals(mode)){
+			isShowHint = PreferenceHandler.getHintDisplayPreference(mContext);
+			cheat = true;
+		}
+
 
 	}
 
@@ -220,27 +227,14 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 				
 				holder = new QuestionViewHolder();
 				
-				
 				holder.txtNumber = (TextView) convertView.findViewById(R.id.txt_question_number);
-				holder.txtHint = (TextView) convertView.findViewById(R.id.txt_question_hint);
+				holder.txtQuestionHint = (TextView) convertView.findViewById(R.id.txt_question_hint);
+
 				
-				holder.btnAnswers = new ArrayList<Button>(2);
-				holder.edtAnswers = new ArrayList<EditText>(2);
-				holder.txtHints = new ArrayList<TextView>(2);
+				holder.txtQuestionTxt = (TextView) convertView.findViewById(R.id.txt_question_txt);
+				holder.imgQuestion = (ImageView) convertView.findViewById(R.id.img_question);	
 				
-				
-//				holder.btnAnswers.add((Button) convertView.findViewById(R.id.btn_question_answer_1));
-//				holder.btnAnswers.add((Button) convertView.findViewById(R.id.btn_question_answer_2));
-//				
-//				holder.edtAnswers.add((EditText) convertView.findViewById(R.id.edt_question_answer_1));
-//				holder.edtAnswers.add((EditText) convertView.findViewById(R.id.edt_question_answer_2));
-//				
-//				holder.txtHints.add((TextView) convertView.findViewById(R.id.txt_question_answer_hint_1));
-//				holder.txtHints.add((TextView) convertView.findViewById(R.id.txt_question_answer_hint_2));				
-				
-				//holder.layoutHint = (LinearLayout) convertView.findViewById(R.id.layout_question_hint);
-				holder.txtQuestion = (TextView) convertView.findViewById(R.id.txt_question_txt);
-				holder.imgQuestion = (ImageView) convertView.findViewById(R.id.img_question);				
+				holder.layoutQuestionAnswer = (LinearLayout) convertView.findViewById(R.id.layout_question_answer);
 				
 				convertView.setTag(holder);
 								
@@ -249,31 +243,25 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 							
 			}		
 			
-			for(int i = 0; i < holder.btnAnswers.size(); i ++){
-				Button btn = holder.btnAnswers.get(i);
-				btn.setBackgroundResource(R.drawable.circle_number_trans);
-				btn.setText((i + 1) + "");
-				btn.setTextColor(mContext.getResources().getColor(R.color.BLACK));
-			}	
-			
+			//final LinearLayout layoutQuestionHint = (LinearLayout) questionView.findViewById(R.id.layout_question_hint);
 			if(question.getHint() == null || question.getHint().isEmpty()){
-				holder.txtHint.setVisibility(LinearLayout.GONE);
+				holder.txtQuestionHint.setVisibility(LinearLayout.GONE);
 			} else {
-				holder.txtHint.setVisibility(LinearLayout.VISIBLE);
-				holder.txtHint.setText(question.getHint());
-										
+				holder.txtQuestionHint.setVisibility(LinearLayout.VISIBLE);
+				holder.txtQuestionHint.setText(question.getHint());
+			}
+				
+			
+			String txt = question.getText();
+			holder.txtQuestionTxt.setVisibility(TextView.VISIBLE);
+			if( txt != null && !txt.isEmpty()){
+				holder.txtQuestionTxt.setText(txt + " (" + question.getMark() + "점)");
+			} else {
+				holder.txtQuestionTxt.setText("(" + question.getMark() + "점)");
 			}
 			
-			holder.txtQuestion.setVisibility(TextView.VISIBLE);
-			String questionTxt = question.getText(); 
-			if(questionTxt != null && !questionTxt.isEmpty()){
-				holder.txtQuestion.setText(questionTxt + " (" + question.getMark() + "점)");
-			} else {
-				holder.txtQuestion.setText("(" + question.getMark() + "점)");
-			}			
 			if(Constants.FILE_TYPE_IMG.equals(question.getType())){
 				holder.imgQuestion.setVisibility(ImageView.VISIBLE);	
-				
 				if(question.getImg() !=  null && question.getImg().getPathLocal() != null && new File(question.getImg().getPathLocal()).exists()){
 					holder.imgQuestion.setImageBitmap(ImageUtils.decodeSampledBitmapFromFile(question.getImg().getPathLocal(), 300, 300));
 				} else {
@@ -287,45 +275,113 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 							showDownloadDialog(question.getImg());
 						}
 					});
-				}				
+				}	
 			} else {
-				holder.imgQuestion.setVisibility(ImageView.GONE);	
+				holder.imgQuestion.setVisibility(ImageView.GONE);
 			}
-
 			
 			
 			holder.txtNumber.setText(question.getNumber() + ". ");
-			
-			
+		
 			List<ChoiceDataSet> choices = question.getChoices();
 			if(choices != null){
-				for(int i = 0; i < 2; i ++){
+				holder.layoutQuestionAnswer.removeAllViews();
+				for(int i = 0; i < choices.size(); i ++){
 					final ChoiceDataSet choice = choices.get(i);
-					holder.btnAnswers.get(i).setText(choice.getLabel());
-					holder.txtHints.get(i).setText(choice.getContent());			
-				}			
+					LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.layout_answer_multi, holder.layoutQuestionAnswer, false);
+					
+					Button btnAnswer = (Button) layout.findViewById(R.id.btn_question_answer);
+					btnAnswer.setText(choice.getLabel());
+					if(choices.size() == 1){
+						btnAnswer.setVisibility(Button.GONE);
+					}
+					final TextView txtHint = (TextView) layout.findViewById(R.id.txt_question_answer_hint);							
+					txtHint.setText(choice.getContent());
+					
+					final Button btnHint = (Button) layout.findViewById(R.id.btn_question_answer_hint);
+					
+					
+					if(cheat){
+						btnHint.setVisibility(Button.VISIBLE);
+						btnHint.setOnClickListener(new OnClickListener() {
+							
+							@Override
+							public void onClick(View arg0) {
+								if(txtHint.getVisibility() == TextView.VISIBLE){
+									txtHint.setVisibility(TextView.GONE);
+									btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);									
+								} else {
+									btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);
+									txtHint.setVisibility(TextView.VISIBLE);									
+								}
+							}
+						});
+						if(isShowHint){
+							btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);
+							txtHint.setVisibility(TextView.VISIBLE);
+						} else {
+							txtHint.setVisibility(TextView.GONE);
+							btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
+						}
+					} else {
+						btnHint.setVisibility(Button.GONE);
+						txtHint.setVisibility(Button.GONE);
+					}
+					
+					final EditText edtAnswer = (EditText) layout.findViewById(R.id.edt_question_answer);
+					edtAnswer.setText(choice.getAnswer());
+					edtAnswer.requestFocus();
+					if(choices.size() == 1){
+						edtAnswer.setMinLines(6);
+					}
+					final Button btnSave = (Button) layout.findViewById(R.id.btn_question_answer_save);
+					btnSave.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View v) {
+							btnSave.setBackgroundResource(R.drawable.ic_action_done_cyan);
+							choice.setAnswer(edtAnswer.getText().toString());
+							onSave(new DatabaseAdapter(mContext).updateChoice(choice, question.getId()));
+						}
+					});
+					holder.layoutQuestionAnswer.addView(layout);
+				}		
 				
-			}
-		
-				
+			}				
 	
 		
 			return convertView;
 		}
 		private class QuestionViewHolder{
 			TextView txtNumber;
-			TextView txtQuestion;
-			ImageView imgQuestion;
-			//LinearLayout layoutHint;
-			TextView txtHint;		
-//			List<Button> btnChoices;
-//			List<TextView> txtChoices;
-//			List<ImageView> imgChoices;
-			List<Button> btnAnswers;
-			List<EditText> edtAnswers;
-			List<TextView> txtHints;		
+			TextView txtQuestionHint;
+			TextView txtQuestionTxt;
+			ImageView imgQuestion;	
+			LinearLayout layoutQuestionAnswer;
 		}
 	}
+	private void onSave(int result){
+		final Dialog dialog = new Dialog(mContext);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.layout_dialog_ok);	
+		dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		dialog.findViewById(R.id.btn_dialog_ok).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});		
+		
+		TextView txtContent = (TextView) dialog.findViewById(R.id.txt_dialog_content);
+		if(result > -1){
+			txtContent.setText(mContext.getResources().getString(R.string.question_answer_save_ok));
+		} else {
+			txtContent.setText(mContext.getResources().getString(R.string.question_answer_save_error));
+		}
+		
+		dialog.show();
+	}	
 	public void showDownloadDialog(final FileDataSet file){
 		final Dialog dialog = new Dialog(mContext);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

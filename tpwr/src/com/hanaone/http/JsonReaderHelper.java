@@ -188,6 +188,11 @@ public class JsonReaderHelper {
 				choice.setType(reader.nextString());
 			} else if(name.equals("txt")){
 				choice.setContent(reader.nextString());
+			} else if(name.equals("goal_min")){
+				choice.setGoalMin(reader.nextInt());
+			} else if(name.equals("goal_max")){
+				choice.setGoalMax(reader.nextInt());
+								
 			} else {
 				reader.skipValue();
 			}

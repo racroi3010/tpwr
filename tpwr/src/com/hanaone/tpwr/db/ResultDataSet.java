@@ -7,36 +7,54 @@ import android.os.Parcelable;
 
 public class ResultDataSet implements Parcelable, Pojo {
 	private int number;
-	private int choice;
-	private int answer;
-	private int score;
+	private String label;
+	private int goalMin;
+	private int goalMax;
+	private int finish;
 	
 	public ResultDataSet() {
 	}
+
+	
+
+
+
 
 	public int getNumber() {
 		return number;
 	}
 
+
+
+
+
+
 	public void setNumber(int number) {
 		this.number = number;
 	}
 
-	public int getChoice() {
-		return choice;
+
+
+
+
+
+	public String getLabel() {
+		return label;
 	}
 
-	public void setChoice(int choice) {
-		this.choice = choice;
+
+
+
+
+
+	public void setLabel(String label) {
+		this.label = label;
 	}
 
-	public int getAnswer() {
-		return answer;
-	}
 
-	public void setAnswer(int answer) {
-		this.answer = answer;
-	}
+
+
+
 
 	@Override
 	public int describeContents() {
@@ -44,20 +62,39 @@ public class ResultDataSet implements Parcelable, Pojo {
 		return 0;
 	}
 
-	public int getScore() {
-		return score;
+	
+
+	public int getGoalMin() {
+		return goalMin;
 	}
 
-	public void setScore(int score) {
-		this.score = score;
+	public void setGoalMin(int goalMin) {
+		this.goalMin = goalMin;
+	}
+
+	public int getGoalMax() {
+		return goalMax;
+	}
+
+	public void setGoalMax(int goalMax) {
+		this.goalMax = goalMax;
+	}
+
+	public int getFinish() {
+		return finish;
+	}
+
+	public void setFinish(int finish) {
+		this.finish = finish;
 	}
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeInt(number);
-		dest.writeInt(choice);
-		dest.writeInt(answer);
-		dest.writeInt(score);
+		dest.writeString(label);
+		dest.writeInt(goalMin);
+		dest.writeInt(goalMax);
+		dest.writeInt(finish);
 	}
 	public static final Creator<ResultDataSet> CREATOR = new Creator<ResultDataSet>() {
 
@@ -74,9 +111,10 @@ public class ResultDataSet implements Parcelable, Pojo {
 	};
 	private ResultDataSet(Parcel in){
 		number = in.readInt();
-		choice = in.readInt();
-		answer = in.readInt();
-		score = in.readInt();
+		label = in.readString();
+		goalMin = in.readInt();
+		goalMax = in.readInt();
+		finish = in.readInt();
 	}
 
 	@Override

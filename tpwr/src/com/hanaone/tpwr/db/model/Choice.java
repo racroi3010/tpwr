@@ -12,8 +12,10 @@ public class Choice implements Model {
 	private String label;
 	private String content;
 	private int file_id;
-	private int question_id;
-	
+	private int question_id;	
+	private String answer;
+	private int goalMin;
+	private int goalMax;
 	public int getId() {
 		return id;
 	}
@@ -60,6 +62,34 @@ public class Choice implements Model {
 	}
 	
 	
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+
+
+
+
+	public int getGoalMin() {
+		return goalMin;
+	}
+	public void setGoalMin(int goalMin) {
+		this.goalMin = goalMin;
+	}
+	public int getGoalMax() {
+		return goalMax;
+	}
+	public void setGoalMax(int goalMax) {
+		this.goalMax = goalMax;
+	}
+
+
+
+
+
 	public static abstract class ChoiceEntry implements BaseColumns{
 		public static final String TABLE_NAME = "choice";
 		public static final String COLUMN_NAME_NUMBER = "number";
@@ -68,6 +98,9 @@ public class Choice implements Model {
 		public static final String COLUMN_NAME_CONTENT = "content";
 		public static final String COLUMN_FILE_ID = "file_id";
 		public static final String COLUMN_QUESTION_ID = "question_id";
+		public static final String COLUMN_NAME_ANSWER = "answer";
+		public static final String COLUMN_NAME_GOAL_MIN = "goal_min";
+		public static final String COLUMN_NAME_GOAL_MAX = "goal_max";
 	}
 
 
@@ -79,6 +112,9 @@ public class Choice implements Model {
 		choice.setType(type);
 		choice.setLabel(label);
 		choice.setContent(content);
+		choice.setAnswer(answer);
+		choice.setGoalMin(goalMin);
+		choice.setGoalMax(goalMax);
 		return choice;
 	}	
 }

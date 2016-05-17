@@ -18,7 +18,7 @@
     <string name="setting_manual">Manual</string>
     <string name="setting_rate">Rate this app</string>
     <string name="setting_share">Share this app</string>
-    <string name="setting_message">\tThis application isn\'t only suitable for the people who pursues a Topik certificate, but also good for practice reading Korean commonly. Hope all of you will have a good time in Korean. If there is any wrong content, please feel free to contact me via doanhuunoi@gmail.com.</string>
+    <string name="setting_message">\tThis application isn\'t only suitable for the people who pursues a Topik certificate, but also good for practice writing Korean commonly. Hope all of you will have a good time in Korean. If there is any wrong content, please feel free to contact me via doanhuunoi@gmail.com.</string>
     <string name="setting_practice">Practice</string>
     <string name="setting_display_hint">Display Hint Text</string>
     <string name="setting_app">App</string>
@@ -50,6 +50,8 @@
     <string name="result_bar_answer">Answer</string>
     <string name="result_bar_score">Score</string>
     <string name="result_click_item">(Click question to review)</string>
+    <string name="result_expected">Goal</string>
+    <string name="result_result">Result</string>
 
     <!-- Select -->
     <string name="selection_title">TOPIK Writing %1$s회-%2$s</string>

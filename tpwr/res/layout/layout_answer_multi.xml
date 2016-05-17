@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/btn_question_answer"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/circle_number_trans"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="@color/BLACK" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+            <Button
+                android:id="@+id/btn_question_answer_hint"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_image_wb_sunny_black"
+                android:visibility="visible" 
+                android:layout_alignParentRight="true"/>
+            <TextView
+                android:id="@+id/txt_question_answer_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hint_txt_border"
+                android:padding="2dp"
+                android:text=""
+                android:textColor="@color/GRAY_HINT"
+                android:textSize="16sp" 
+                android:layout_toLeftOf="@id/btn_question_answer_hint"/>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp" >
+
+            <EditText
+                android:id="@+id/edt_question_answer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left|top"
+                android:imeOptions="actionDone"
+                android:text=""
+                android:textColor="@color/BLACK"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_question_answer_save"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_action_done_black"
+                android:gravity="center_horizontal|top"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

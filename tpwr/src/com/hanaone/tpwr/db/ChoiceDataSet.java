@@ -13,6 +13,9 @@ public class ChoiceDataSet implements Parcelable, Pojo {
 	private String label;
 	private String content;
 	private FileDataSet img;
+	private String answer;	
+	private int goalMin;
+	private int goalMax;
 	public ChoiceDataSet() {
 
 	}	
@@ -54,6 +57,27 @@ public class ChoiceDataSet implements Parcelable, Pojo {
 	public void setImg(FileDataSet img) {
 		this.img = img;
 	}
+	
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+	
+
+	public int getGoalMin() {
+		return goalMin;
+	}
+	public void setGoalMin(int goalMin) {
+		this.goalMin = goalMin;
+	}
+	public int getGoalMax() {
+		return goalMax;
+	}
+	public void setGoalMax(int goalMax) {
+		this.goalMax = goalMax;
+	}
 	@Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
@@ -67,6 +91,9 @@ public class ChoiceDataSet implements Parcelable, Pojo {
 		dest.writeString(label);
 		dest.writeString(content);
 		dest.writeParcelable(img, flags);
+		dest.writeString(answer);
+		dest.writeInt(goalMin);
+		dest.writeInt(goalMax);
 	}
 	
 	public static final Parcelable.Creator<ChoiceDataSet> CREATOR
@@ -92,6 +119,9 @@ public class ChoiceDataSet implements Parcelable, Pojo {
 		label = in.readString();
 		content = in.readString();
 		img = in.readParcelable(FileDataSet.class.getClassLoader());
+		answer = in.readString();
+		goalMin = in.readInt();
+		goalMax = in.readInt();
 	}
 	@Override
 	public Choice toModel() {
@@ -101,6 +131,9 @@ public class ChoiceDataSet implements Parcelable, Pojo {
 		choice.setType(type);
 		choice.setLabel(label);
 		choice.setContent(content);
+		choice.setAnswer(answer);
+		choice.setGoalMin(goalMin);
+		choice.setGoalMax(goalMax);
 		return choice;
 	}
 }

@@ -50,6 +50,8 @@
     <string name="result_bar_answer">Đáp Án</string>
     <string name="result_bar_score">Điểm Số</string>
     <string name="result_click_item">(Chọn câu hỏi để xem lại)</string>
+    <string name="result_expected">Mục tiêu</string>
+    <string name="result_result">Kết quả</string>
 
     <!-- Select -->
     <string name="selection_title">Luyện Viết Topik Lần Thi %1$s-%2$s</string>

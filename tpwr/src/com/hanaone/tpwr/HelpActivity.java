@@ -1,30 +1,24 @@
 package com.hanaone.tpwr;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-
-import com.hanaone.tpwr.util.LocaleUtils;
-import com.hanaone.tpwr.util.PreferenceHandler;
-import com.kyleduo.switchbutton.SwitchButton;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.CompoundButton;
-import android.widget.Spinner;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.Spinner;
+
+import com.hanaone.tpwr.util.LocaleUtils;
+import com.hanaone.tpwr.util.PreferenceHandler;
+import com.kyleduo.switchbutton.SwitchButton;
 
 public class HelpActivity extends Activity {
 	private Context mContext;
@@ -93,7 +87,16 @@ public class HelpActivity extends Activity {
 		LocaleUtils.setLocale(mContext, position);	
 		setContentView(R.layout.activity_help);
 
+		SwitchButton swHint = (SwitchButton) findViewById(R.id.sw_help_hint);
+		swHint.setChecked(PreferenceHandler.getHintDisplayPreference(mContext));
+		swHint.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView,
+					boolean isChecked) {
+				PreferenceHandler.setHintDisplayPreference(mContext, isChecked);
+			}
+		});
 
 		spLanguage = (Spinner) findViewById(R.id.sp_language);
 

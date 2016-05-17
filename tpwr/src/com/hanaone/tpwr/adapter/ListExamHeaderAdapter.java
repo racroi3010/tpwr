@@ -175,7 +175,7 @@ public class ListExamHeaderAdapter extends BaseAdapter {
 			int maxScore = level.getMaxScore();
 			int score = level.getScore();
 			int progress = maxScore == 0 ? 0 : (score * 100)/maxScore;
-			String scoreLabel = score + "/"+ maxScore;
+			//String scoreLabel = score + "/"+ maxScore;
 			
 			holder.txtLabel.setText(level.getLabel() + "");
 			holder.imgIcon.setBackgroundColor(level.getColor());
@@ -186,7 +186,7 @@ public class ListExamHeaderAdapter extends BaseAdapter {
 			}				
 			if(info.getStatus() != DownloadInfo.DOWNLOADING && info.getStatus() != DownloadInfo.QUEUED){
 				info.getPrgBar().setProgress(progress);
-				info.getTxtPer().setText(scoreLabel);									
+				//info.getTxtPer().setText(scoreLabel);									
 			} else{
 				info.getPrgBar().setProgress(info.getProgress());
 				info.getTxtPer().setText(info.getProgress() + "%");

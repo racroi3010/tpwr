@@ -507,15 +507,18 @@ android.support.v4.content.ContextCompat:
     220:231:public static java.io.File[] getExternalFilesDirs(android.content.Context,java.lang.String)
     280:291:public static java.io.File[] getExternalCacheDirs(android.content.Context)
     296:304:private static varargs java.io.File buildPath(java.io.File,java.lang.String[])
-    319:323:public static final android.graphics.drawable.Drawable getDrawable(android.content.Context,int)
-    342:346:public static final android.content.res.ColorStateList getColorStateList(android.content.Context,int)
     364:368:public static final int getColor(android.content.Context,int)
     383:387:public static int checkSelfPermission(android.content.Context,java.lang.String)
     407:412:public final java.io.File getNoBackupFilesDir(android.content.Context)
     432:437:public final java.io.File getCodeCacheDir(android.content.Context)
     442:452:private static synchronized java.io.File createFilesDir(java.io.File)
-android.support.v4.content.ContextCompatApi21
-android.support.v4.content.ContextCompatApi23
+android.support.v4.content.ContextCompatApi21:
+    24:24:ContextCompatApi21()
+    30:30:public static java.io.File getNoBackupFilesDir(android.content.Context)
+    34:34:public static java.io.File getCodeCacheDir(android.content.Context)
+android.support.v4.content.ContextCompatApi23:
+    25:25:ContextCompatApi23()
+    31:31:public static int getColor(android.content.Context,int)
 android.support.v4.content.ContextCompatFroyo
 android.support.v4.content.ContextCompatHoneycomb
 android.support.v4.content.ContextCompatJellybean
@@ -5080,8 +5083,8 @@ com.hanaone.http.ConnectionHelper:
     public static final int HOST_AMAZON
 com.hanaone.http.JsonReaderHelper:
     20:20:public JsonReaderHelper()
-com.hanaone.tprd.BuildConfig
-com.hanaone.tprd.Constants:
+com.hanaone.tpwr.BuildConfig
+com.hanaone.tpwr.Constants:
     public static final java.lang.String REMOTE_CONFIG_FILE_JSON
     public static final java.lang.String FILE_TYPE_PDF
     public static final java.lang.String FILE_TYPE_TXT
@@ -5122,30 +5125,91 @@ com.hanaone.tprd.Constants:
     protected static final java.lang.String UPDATE_LOCALE
     8:8:public Constants()
     86:89:public static java.lang.String getExternalPath(android.content.Context,java.lang.String)
-com.hanaone.tprd.HelpActivity:
-    156:178:private android.content.Intent getShareIntent(java.lang.String,java.lang.String,java.lang.String)
-com.hanaone.tprd.MainActivity:
+com.hanaone.tpwr.HelpActivity:
+    159:181:private android.content.Intent getShareIntent(java.lang.String,java.lang.String,java.lang.String)
+com.hanaone.tpwr.MainActivity:
     private static final java.lang.String TAG
-com.hanaone.tprd.QuestionSlideFragment:
+com.hanaone.tpwr.QuestionSlideFragment:
     private static final java.lang.String ARG_PAGE
     private static final java.lang.String ARG_Listener
-com.hanaone.tprd.R
-com.hanaone.tprd.R$anim
-com.hanaone.tprd.R$array
-com.hanaone.tprd.R$attr
-com.hanaone.tprd.R$color
-com.hanaone.tprd.R$dimen
-com.hanaone.tprd.R$drawable
-com.hanaone.tprd.R$id
-com.hanaone.tprd.R$integer
-com.hanaone.tprd.R$layout
-com.hanaone.tprd.R$mipmap
-com.hanaone.tprd.R$string
-com.hanaone.tprd.R$style
-com.hanaone.tprd.R$styleable
-com.hanaone.tprd.adapter.DatabaseAdapter:
+com.hanaone.tpwr.R:
+    10:10:public R()
+com.hanaone.tpwr.R$anim
+com.hanaone.tpwr.R$array
+com.hanaone.tpwr.R$attr
+com.hanaone.tpwr.R$color
+com.hanaone.tpwr.R$dimen
+com.hanaone.tpwr.R$drawable
+com.hanaone.tpwr.R$id
+com.hanaone.tpwr.R$integer
+com.hanaone.tpwr.R$layout
+com.hanaone.tpwr.R$mipmap
+com.hanaone.tpwr.R$string
+com.hanaone.tpwr.R$style
+com.hanaone.tpwr.R$styleable:
+    public static final int AdsAttrs_adSize
+    public static final int AdsAttrs_adSizes
+    public static final int AdsAttrs_adUnitId
+    public static final int CustomWalletTheme_windowTransitionStyle
+    public static final int LoadingImageView_circleCrop
+    public static final int LoadingImageView_imageAspectRatio
+    public static final int LoadingImageView_imageAspectRatioAdjust
+    public static final int MapAttrs_ambientEnabled
+    public static final int MapAttrs_cameraBearing
+    public static final int MapAttrs_cameraTargetLat
+    public static final int MapAttrs_cameraTargetLng
+    public static final int MapAttrs_cameraTilt
+    public static final int MapAttrs_cameraZoom
+    public static final int MapAttrs_liteMode
+    public static final int MapAttrs_mapType
+    public static final int MapAttrs_uiCompass
+    public static final int MapAttrs_uiMapToolbar
+    public static final int MapAttrs_uiRotateGestures
+    public static final int MapAttrs_uiScrollGestures
+    public static final int MapAttrs_uiTiltGestures
+    public static final int MapAttrs_uiZoomControls
+    public static final int MapAttrs_uiZoomGestures
+    public static final int MapAttrs_useViewLifecycle
+    public static final int MapAttrs_zOrderOnTop
+    public static final int SignInButton_buttonSize
+    public static final int SignInButton_colorScheme
+    public static final int SignInButton_scopeUris
+    public static final int SwitchButton_kswAnimationDuration
+    public static final int SwitchButton_kswBackColor
+    public static final int SwitchButton_kswBackDrawable
+    public static final int SwitchButton_kswBackMeasureRatio
+    public static final int SwitchButton_kswBackRadius
+    public static final int SwitchButton_kswFadeBack
+    public static final int SwitchButton_kswThumbColor
+    public static final int SwitchButton_kswThumbDrawable
+    public static final int SwitchButton_kswThumbHeight
+    public static final int SwitchButton_kswThumbMargin
+    public static final int SwitchButton_kswThumbMarginBottom
+    public static final int SwitchButton_kswThumbMarginLeft
+    public static final int SwitchButton_kswThumbMarginRight
+    public static final int SwitchButton_kswThumbMarginTop
+    public static final int SwitchButton_kswThumbRadius
+    public static final int SwitchButton_kswThumbWidth
+    public static final int SwitchButton_kswTintColor
+    public static final int WalletFragmentOptions_appTheme
+    public static final int WalletFragmentOptions_environment
+    public static final int WalletFragmentOptions_fragmentMode
+    public static final int WalletFragmentOptions_fragmentStyle
+    public static final int WalletFragmentStyle_buyButtonAppearance
+    public static final int WalletFragmentStyle_buyButtonHeight
+    public static final int WalletFragmentStyle_buyButtonText
+    public static final int WalletFragmentStyle_buyButtonWidth
+    public static final int WalletFragmentStyle_maskedWalletDetailsBackground
+    public static final int WalletFragmentStyle_maskedWalletDetailsButtonBackground
+    public static final int WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance
+    public static final int WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance
+    public static final int WalletFragmentStyle_maskedWalletDetailsLogoImageType
+    public static final int WalletFragmentStyle_maskedWalletDetailsLogoTextColor
+    public static final int WalletFragmentStyle_maskedWalletDetailsTextAppearance
+    1219:1219:public R$styleable()
+com.hanaone.tpwr.adapter.DatabaseAdapter:
     196:207:public int updateLevelAudio(int,java.lang.String,java.lang.String)
-com.hanaone.tprd.adapter.DatabaseHelper:
+com.hanaone.tpwr.adapter.DatabaseHelper:
     public static final int DATABASE_VERSION
     public static final java.lang.String DATABASE_NAME
     private static final java.lang.String TEXT_TYPE
@@ -5167,9 +5231,9 @@ com.hanaone.tprd.adapter.DatabaseHelper:
     private static final java.lang.String DELETE_TABLE_QUESTION
     private static final java.lang.String DELETE_TABLE_SECTION
     private static final java.lang.String DELETE_TABLE_EXAM_LEVEL
-    138:713:public DatabaseHelper(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)
-    585:606:public com.hanaone.tprd.db.model.Question selectQuestionById(long)
-com.hanaone.tprd.adapter.DownloadInfo:
+    141:725:public DatabaseHelper(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)
+    594:615:public com.hanaone.tpwr.db.model.Question selectQuestionById(long)
+com.hanaone.tpwr.adapter.DownloadInfo:
     public static final int COMPLETED
     public static final int DOWNLOADING
     public static final int QUEUED
@@ -5219,68 +5283,70 @@ com.hanaone.tprd.adapter.DownloadInfo:
     186:187:public void setLayoutLevel2(android.widget.LinearLayout)
     189:189:public android.widget.LinearLayout getLayoutLevel1()
     192:193:public void setLayoutLevel1(android.widget.LinearLayout)
-com.hanaone.tprd.adapter.DownloadLevelAdapter:
+com.hanaone.tpwr.adapter.DownloadLevelAdapter:
     private static final int HANDLE_INSERT_SECTION
     private static final int HANDLE_ACTIVE_LEVEL
-com.hanaone.tprd.adapter.ListExamAdapter
-com.hanaone.tprd.adapter.ListExamAdapter$1
-com.hanaone.tprd.adapter.ListExamAdapter$2
-com.hanaone.tprd.adapter.ListExamAdapter$3
-com.hanaone.tprd.adapter.ListExamAdapter$4
-com.hanaone.tprd.adapter.ListExamAdapter$5
-com.hanaone.tprd.adapter.ListExamAdapter$6
-com.hanaone.tprd.adapter.ListExamAdapter$7
-com.hanaone.tprd.adapter.ListExamAdapter$Downloading
-com.hanaone.tprd.adapter.ListExamAdapter$Downloading$1
-com.hanaone.tprd.adapter.ListExamAdapter$ViewHolder
-com.hanaone.tprd.adapter.ListExamHeaderAdapter:
+com.hanaone.tpwr.adapter.ListExamAdapter
+com.hanaone.tpwr.adapter.ListExamAdapter$1
+com.hanaone.tpwr.adapter.ListExamAdapter$2
+com.hanaone.tpwr.adapter.ListExamAdapter$3
+com.hanaone.tpwr.adapter.ListExamAdapter$4
+com.hanaone.tpwr.adapter.ListExamAdapter$5
+com.hanaone.tpwr.adapter.ListExamAdapter$6
+com.hanaone.tpwr.adapter.ListExamAdapter$7
+com.hanaone.tpwr.adapter.ListExamAdapter$Downloading
+com.hanaone.tpwr.adapter.ListExamAdapter$Downloading$1
+com.hanaone.tpwr.adapter.ListExamAdapter$ViewHolder
+com.hanaone.tpwr.adapter.ListExamHeaderAdapter:
     private static final int TYPE_ITEM
     private static final int TYPE_SEPARATOR
-com.hanaone.tprd.adapter.ListSectionAdapter$Item:
+com.hanaone.tpwr.adapter.ListSectionAdapter:
+    104:114:private void onChoose(com.hanaone.tpwr.db.QuestionDataSet,int,java.util.List)
+com.hanaone.tpwr.adapter.ListSectionAdapter$Item:
     public abstract int getViewType()
-com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem:
-    210:210:public int getViewType()
-com.hanaone.tprd.adapter.ListSectionAdapter$SectionItem:
-    123:123:public int getViewType()
-com.hanaone.tprd.db.ChoiceDataSet:
-    20:20:public int getId()
-    26:26:public int getNumber()
-com.hanaone.tprd.db.ExamDataSet:
+com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem:
+    218:218:public int getViewType()
+com.hanaone.tpwr.adapter.ListSectionAdapter$SectionItem:
+    131:131:public int getViewType()
+com.hanaone.tpwr.db.ChoiceDataSet:
+    23:23:public int getId()
+    29:29:public int getNumber()
+com.hanaone.tpwr.db.ExamDataSet:
     27:27:public java.lang.String getDate()
-com.hanaone.tprd.db.FileDataSet:
+com.hanaone.tpwr.db.FileDataSet:
     26:26:public java.lang.String getType()
     32:32:public java.lang.String getName()
-com.hanaone.tprd.db.QuestionDataSet:
-    28:28:public int getId()
-com.hanaone.tprd.db.SectionDataSet:
+com.hanaone.tpwr.db.QuestionDataSet:
+    58:58:public int getAnswer()
+    77:77:public int getChoice()
+    80:81:public void setChoice(int)
+com.hanaone.tpwr.db.SectionDataSet:
     24:24:public int getId()
-com.hanaone.tprd.db.model.Choice$ChoiceEntry
-com.hanaone.tprd.db.model.ExamLevel$ExamLevelEntry
-com.hanaone.tprd.db.model.Examination$ExamEntry
-com.hanaone.tprd.db.model.FileExtra$FileExtraEntry
-com.hanaone.tprd.db.model.Question$QuestionEntry
-com.hanaone.tprd.db.model.Section$SectionEntry
-com.hanaone.tprd.util.ColorUtils:
+com.hanaone.tpwr.db.model.Choice$ChoiceEntry
+com.hanaone.tpwr.db.model.ExamLevel$ExamLevelEntry
+com.hanaone.tpwr.db.model.Examination$ExamEntry
+com.hanaone.tpwr.db.model.FileExtra$FileExtraEntry
+com.hanaone.tpwr.db.model.Question$QuestionEntry
+com.hanaone.tpwr.db.model.Section$SectionEntry
+com.hanaone.tpwr.util.ColorUtils:
     5:5:public ColorUtils()
-com.hanaone.tprd.util.Config
-com.hanaone.tprd.util.DatabaseUtils:
+com.hanaone.tpwr.util.Config
+com.hanaone.tpwr.util.DatabaseUtils:
     10:10:public DatabaseUtils()
-com.hanaone.tprd.util.ImageUtils:
+com.hanaone.tpwr.util.ImageUtils:
     10:10:public ImageUtils()
+    38:70:public static android.graphics.Bitmap decodeSampledBitmapFromResource(android.content.res.Resources,int,int,int)
     112:115:public static float convertPixelsToDp(float,android.content.Context)
-com.hanaone.tprd.util.LocaleUtils:
+com.hanaone.tpwr.util.LocaleUtils:
     10:10:public LocaleUtils()
-com.hanaone.tprd.util.PreferenceHandler:
+com.hanaone.tpwr.util.PreferenceHandler:
     private static final java.lang.String PREFERENCE_NAME
+    private static final java.lang.String HINT_DISPLAY
     private static final java.lang.String LANGUAGE_POSITION
     8:8:public PreferenceHandler()
     19:24:private static void removeAllPreference(android.content.Context)
-    27:33:private static void setBooleanPreference(android.content.Context,java.lang.String,boolean)
-    35:35:private static boolean getBooleanPreference(android.content.Context,java.lang.String)
     88:89:public static void setUpdateLocalePreference(android.content.Context,boolean)
     91:91:public static boolean getUpdateLocalePreference(android.content.Context)
-com.hanaone.tprd.view.DigitalClockView:
+com.hanaone.tpwr.view.DigitalClockView:
     private static final int HANDLE_UPDATE_CLOCK
-com.hanaone.tprd.view.DraggableButton
-com.kyleduo.switchbutton.ColorUtils
-com.kyleduo.switchbutton.SwitchButton
+com.hanaone.tpwr.view.DraggableButton

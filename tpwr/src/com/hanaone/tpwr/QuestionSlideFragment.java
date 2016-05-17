@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
@@ -201,12 +202,13 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 							
 
 							if(cheat){
+								btnHint.setVisibility(Button.VISIBLE);
 								btnHint.setOnClickListener(new OnClickListener() {
 									
 									@Override
 									public void onClick(View arg0) {
 										if(txtHint.getVisibility() == TextView.VISIBLE){
-											txtHint.setVisibility(TextView.INVISIBLE);
+											txtHint.setVisibility(TextView.GONE);
 											btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);									
 										} else {
 											btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);
@@ -218,20 +220,25 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 									btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);
 									txtHint.setVisibility(TextView.VISIBLE);
 								} else {
-									txtHint.setVisibility(TextView.INVISIBLE);
+									txtHint.setVisibility(TextView.GONE);
 									btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
 								}
 							}		
 							
 							final EditText edtAnswer = (EditText) layout.findViewById(R.id.edt_question_answer);
+							edtAnswer.setText(choice.getAnswer());
+							if(choices.size() == 1){
+								edtAnswer.setMinLines(6);
+							}
+
 							final Button btnSave = (Button) layout.findViewById(R.id.btn_question_answer_save);
 							btnSave.setOnClickListener(new OnClickListener() {
 								
 								@Override
 								public void onClick(View v) {
 									btnSave.setBackgroundResource(R.drawable.ic_action_done_cyan);
-									choice.setContent(edtAnswer.getText().toString());
-									onSave(new DatabaseAdapter(getContext()).updateChoice(choice));
+									choice.setAnswer(edtAnswer.getText().toString());
+									onSave(new DatabaseAdapter(getContext()).updateChoice(choice, question.getId()));
 								}
 							});
 							layoutQuestionAnswer.addView(layout);

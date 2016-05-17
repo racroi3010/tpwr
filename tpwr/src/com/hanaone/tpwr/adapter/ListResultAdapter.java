@@ -63,9 +63,8 @@ public class ListResultAdapter extends BaseAdapter {
 			
 			holder = new ViewHolder();
 			holder.txtNumber = (TextView) convertView.findViewById(R.id.txt_result_number);
-			holder.btnChoice = (Button) convertView.findViewById(R.id.btn_result_choice);
-			holder.btnAnswer = (Button) convertView.findViewById(R.id.btn_result_answer);
-			holder.txtScore = (TextView) convertView.findViewById(R.id.txt_result_score);
+			holder.txtGoal = (TextView) convertView.findViewById(R.id.txt_result_goal);
+			holder.txtYour = (TextView) convertView.findViewById(R.id.txt_result_your);
 			
 			convertView.setTag(holder);
 		} else {
@@ -74,29 +73,15 @@ public class ListResultAdapter extends BaseAdapter {
 		
 		final ResultDataSet data = dataSets.get(position);
 		if(data != null){
-			holder.txtNumber.setText(data.getNumber() + "");
-			holder.btnAnswer.setText(data.getAnswer() + "");
 			
-			holder.txtScore.setText("0");
-			
-			if(data.getChoice() == data.getAnswer()){
-				holder.btnChoice.setText(data.getChoice() + "");
-				//holder.txtChoice.setTextColor(mContext.getResources().getColor(R.color.GREEN));
-				holder.btnChoice.setBackgroundResource(R.drawable.circle_number_green);
-				
-				holder.txtScore.setText(data.getScore() + "");
-			} else if(data.getChoice() != -1) {
-				holder.btnChoice.setText(data.getChoice() + "");
-				//holder.txtChoice.setTextColor(mContext.getResources().getColor(R.color.RED));	
-				holder.btnChoice.setBackgroundResource(R.drawable.circle_number_red);
-				holder.txtScore.setText("0");	
-			} else {
-				holder.btnChoice.setText("");
-				//holder.txtChoice.setTextColor(mContext.getResources().getColor(R.color.GREEN));
-				holder.btnChoice.setBackgroundResource(R.drawable.circle_number_trans);
-				
-				holder.txtScore.setText("0");				
+			holder.txtNumber.setText(data.getNumber() + "-" + data.getLabel());
+			String goal = "";
+			if(data.getGoalMin() > 0 && data.getGoalMax() > 0){
+				goal = data.getGoalMin() + "~" + data.getGoalMax();
 			}
+			holder.txtGoal.setText(goal);
+			
+			holder.txtYour.setText(data.getFinish() + "");
 		
 		}
 		
@@ -106,10 +91,8 @@ public class ListResultAdapter extends BaseAdapter {
 	
 	private class ViewHolder{
 		TextView txtNumber;
-		Button btnChoice;
-		Button btnAnswer;
-		TextView txtScore;
-		
+		TextView txtGoal;
+		TextView txtYour;
 	}
 
 }

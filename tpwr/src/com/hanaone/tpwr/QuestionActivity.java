@@ -147,7 +147,7 @@ public class QuestionActivity extends FragmentActivity{
 				@Override
 				public void onPageSelected(int position) {
 					currentItem = position;
-					if(currentItem >= level.getSections().size() - 1) {
+					if(currentItem > level.getSections().size() - 1) {
 						Intent intent = new Intent(mContext, ResultActivity.class);
 						intent.putExtra(Constants.LEVEL, level);
 						startActivity(intent);

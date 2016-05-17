@@ -50,6 +50,8 @@
     <string name="result_bar_answer">답안</string>
     <string name="result_bar_score">점</string>
     <string name="result_click_item">(검토를 위한 질문을 클릭해봅니다)</string>
+    <string name="result_expected">목표</string>
+    <string name="result_result">결과</string>
 
     <!-- Select -->
     <string name="selection_title">TOPIK 쓰기 %1$s회-%2$s</string>

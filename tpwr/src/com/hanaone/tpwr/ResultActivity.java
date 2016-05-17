@@ -23,6 +23,7 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.hanaone.tpwr.adapter.DatabaseAdapter;
 import com.hanaone.tpwr.adapter.ListAdapterListener;
 import com.hanaone.tpwr.adapter.ListResultAdapter;
+import com.hanaone.tpwr.db.ChoiceDataSet;
 import com.hanaone.tpwr.db.LevelDataSet;
 import com.hanaone.tpwr.db.QuestionDataSet;
 import com.hanaone.tpwr.db.ResultDataSet;
@@ -37,9 +38,9 @@ public class ResultActivity extends Activity {
 	private int score;
 	private String mode;
 	private int maxScore;
-	private int correct;
-	private int wrong;
-	private int noAnswer;
+//	private int correct;
+//	private int wrong;
+//	private int noAnswer;
 	private InterstitialAd minInterstitialAd;
 	private ListAdapterListener mListener = new ListAdapterListener() {
 		
@@ -68,32 +69,26 @@ public class ResultActivity extends Activity {
 		level = getIntent().getParcelableExtra(Constants.LEVEL);
 		score = 0;
 		maxScore = 0;
-		correct = 0;
-		wrong = 0;
-		noAnswer = 0;
+
 		if(level != null){
 			listResult = new ArrayList<ResultDataSet>();
 			if(level.getSections() != null){
 				for(SectionDataSet section: level.getSections())
 					for(QuestionDataSet question: section.getQuestions()){
-						ResultDataSet data = new ResultDataSet();
-						data.setNumber(question.getNumber());
-						data.setChoice(question.getChoice());
-						data.setAnswer(question.getAnswer());
-						data.setScore(question.getMark());
-						
-						listResult.add(data);
-						
-						if(data.getChoice() == data.getAnswer()){
-							score += data.getScore();
-							correct ++;
-						} else if(data.getChoice() > 0){
-							wrong ++;
-						} else {
-							noAnswer ++;
-						}
+						for(ChoiceDataSet choice: question.getChoices()){
+							ResultDataSet data = new ResultDataSet();
+							data.setNumber(question.getNumber());
+							data.setLabel(choice.getLabel());
+							data.setGoalMin(choice.getGoalMin());
+							data.setGoalMax(choice.getGoalMax());
+							data.setFinish(choice.getAnswer() != null ? choice.getAnswer().length() : 0);
+							
+							listResult.add(data);
+							
+						}						
 						maxScore += question.getMark();
 					}
+
 			}			
 		}
 
@@ -133,8 +128,6 @@ public class ResultActivity extends Activity {
 		
 		
 		txtTotal.setText(listResult.size() + "");
-		txtRight.setText(correct + "");
-		txtScore.setText(score + "/" + maxScore);
 
 	
 		mode = PreferenceHandler.getQuestionModePreference(mContext);
@@ -160,12 +153,12 @@ public class ResultActivity extends Activity {
 			requestNewInterstitial();			
 		}
 		
-		new Handler().post(new Runnable() {
-			@Override
-			public void run() {
-				showDialog();
-			}
-		});
+//		new Handler().post(new Runnable() {
+//			@Override
+//			public void run() {
+//				showDialog();
+//			}
+//		});
 
 	}
     public void onClick(View v){
@@ -208,42 +201,38 @@ public class ResultActivity extends Activity {
 		}			
 		startActivity(intent);		
 	}
-	private void showDialog(){
-		final Dialog dialog = new Dialog(mContext);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		dialog.setContentView(R.layout.layout_dialog_result_ok);
-		dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		dialog.show();
-		
-		TextView txtTotal = (TextView) dialog.findViewById(R.id.txt_result_total);
-		txtTotal.setText(listResult.size() + "");
-		TextView txtCorrect = (TextView) dialog.findViewById(R.id.txt_result_correct);
-		txtCorrect.setText(correct + "");
-		TextView txtWrong = (TextView) dialog.findViewById(R.id.txt_result_wrong);
-		txtWrong.setText(wrong + "");
-		TextView txtNoAnswer = (TextView) dialog.findViewById(R.id.txt_result_no_answer);
-		txtNoAnswer.setText(noAnswer + "");
-		TextView txtScore = (TextView) dialog.findViewById(R.id.txt_result_score);
-		txtScore.setText(score + "/" + maxScore);
-		TextView txtGrade = (TextView) dialog.findViewById(R.id.txt_result_grade);
-		if(score < (6 * maxScore/10)){
-			txtGrade.setText(mContext.getResources().getString(R.string.result_more_practice));
-			txtGrade.setTextColor(getResources().getColor(R.color.RED));
-		} else if(score < (9 * maxScore/10)){
-			txtGrade.setText(mContext.getResources().getString(R.string.result_well_done));
-			txtGrade.setTextColor(getResources().getColor(R.color.BLUE));
-		} else {
-			txtGrade.setText(mContext.getResources().getString(R.string.result_awesome));
-			txtGrade.setTextColor(getResources().getColor(R.color.GREEN));			
-		}
-		dialog.findViewById(R.id.btn_dialog_ok).setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				dialog.dismiss();
-			}
-		});
-	
-	}
+//	private void showDialog(){
+//		final Dialog dialog = new Dialog(mContext);
+//		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//		dialog.setContentView(R.layout.layout_dialog_result_ok);
+//		dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+//		dialog.show();
+//		
+//		TextView txtTotal = (TextView) dialog.findViewById(R.id.txt_result_total);
+//		txtTotal.setText(listResult.size() + "");
+//		TextView txtCorrect = (TextView) dialog.findViewById(R.id.txt_result_correct);
+//
+//		TextView txtScore = (TextView) dialog.findViewById(R.id.txt_result_score);
+//		txtScore.setText(score + "/" + maxScore);
+//		TextView txtGrade = (TextView) dialog.findViewById(R.id.txt_result_grade);
+//		if(score < (6 * maxScore/10)){
+//			txtGrade.setText(mContext.getResources().getString(R.string.result_more_practice));
+//			txtGrade.setTextColor(getResources().getColor(R.color.RED));
+//		} else if(score < (9 * maxScore/10)){
+//			txtGrade.setText(mContext.getResources().getString(R.string.result_well_done));
+//			txtGrade.setTextColor(getResources().getColor(R.color.BLUE));
+//		} else {
+//			txtGrade.setText(mContext.getResources().getString(R.string.result_awesome));
+//			txtGrade.setTextColor(getResources().getColor(R.color.GREEN));			
+//		}
+//		dialog.findViewById(R.id.btn_dialog_ok).setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View arg0) {
+//				dialog.dismiss();
+//			}
+//		});
+//	
+//	}
 
 }

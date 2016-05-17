@@ -47,7 +47,7 @@
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/exam_level_point"
+            android:text=""
             android:textColor="@color/GRAY_ICON" />
     </LinearLayout>
     <LinearLayout

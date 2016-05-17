@@ -115,7 +115,8 @@
             android:gravity="center"
             android:onClick="onClick"
             android:text="@string/selection_sample_topik1"
-            android:textColor="@color/WHITE" />
+            android:textColor="@color/WHITE"
+            android:visibility="gone" />
 
 
     </LinearLayout>

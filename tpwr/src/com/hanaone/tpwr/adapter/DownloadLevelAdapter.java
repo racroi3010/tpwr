@@ -69,10 +69,14 @@ public class DownloadLevelAdapter extends AsyncTask<Void, Integer, Boolean> {
 	@Override
 	protected void onPostExecute(Boolean result) {
 		info.setStatus(DownloadInfo.NOT_START);
+		
 		if (!result) {
 			mHandler.obtainMessage(HANDLE_ACTIVE_LEVEL, false).sendToTarget();
 
 		} else {
+			TextView txtPer = this.info.getTxtPer();
+			if (txtPer != null)
+				txtPer.setText("100%");			
 			mHandler.obtainMessage(HANDLE_ACTIVE_LEVEL, true).sendToTarget();
 
 		}
@@ -458,7 +462,7 @@ public class DownloadLevelAdapter extends AsyncTask<Void, Integer, Boolean> {
 					if (prgBar != null)
 						prgBar.setProgress(100);
 					if (txtPer != null)
-						txtPer.setText("100%");
+						txtPer.setText("");
 					if (layout != null) {
 						layout.setClickable(true);
 						layout.setAlpha(1f);
@@ -473,7 +477,7 @@ public class DownloadLevelAdapter extends AsyncTask<Void, Integer, Boolean> {
 					if (prgBar != null)
 						prgBar.setProgress(0);
 					if (txtPer != null)
-						txtPer.setText("0/100");
+						txtPer.setText("");
 					if (layout != null) {
 						layout.setClickable(true);
 						layout.setAlpha(0.5f);

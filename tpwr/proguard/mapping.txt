@@ -222,21 +222,22 @@ android.support.v4.app.Fragment -> android.support.v4.app.Fragment:
     android.os.Bundle getArguments() -> g
     android.content.Context getContext() -> h
     android.support.v4.app.FragmentActivity getActivity() -> i
-    android.support.v4.app.FragmentManager getFragmentManager() -> j
-    boolean isAdded() -> k
-    boolean isRemoving() -> l
-    void onHiddenChanged$1385ff() -> m
+    android.content.res.Resources getResources() -> j
+    android.support.v4.app.FragmentManager getFragmentManager() -> k
+    boolean isAdded() -> l
+    boolean isRemoving() -> m
+    void onHiddenChanged$1385ff() -> n
     void setMenuVisibility(boolean) -> a
     void setUserVisibleHint(boolean) -> b
     void startActivityForResult(android.content.Intent,int) -> a
     void onActivityResult$6eb84b52(int,int) -> a
     android.view.LayoutInflater getLayoutInflater(android.os.Bundle) -> b
-    void onInflate$2c1ed547$6a2adb45() -> n
+    void onInflate$2c1ed547$6a2adb45() -> o
     void onAttach(android.app.Activity) -> a
-    android.view.animation.Animation onCreateAnimation$24236ca7() -> o
+    android.view.animation.Animation onCreateAnimation$24236ca7() -> p
     void onCreate(android.os.Bundle) -> a
     android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
-    void onViewCreated$65f1d89() -> p
+    void onViewCreated$65f1d89() -> q
     void onActivityCreated(android.os.Bundle) -> c
     void onStart() -> d
     void onSaveInstanceState(android.os.Bundle) -> d
@@ -245,13 +246,13 @@ android.support.v4.app.Fragment -> android.support.v4.app.Fragment:
     void onLowMemory() -> onLowMemory
     void onDestroyView() -> f
     void onDetach() -> b
-    void onDestroyOptionsMenu() -> q
+    void onDestroyOptionsMenu() -> r
     void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
-    void instantiateChildFragmentManager() -> r
+    void instantiateChildFragmentManager() -> s
     android.view.View performCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> b
-    void performReallyStop() -> s
-    void performDestroy() -> t
+    void performReallyStop() -> t
+    void performDestroy() -> u
     void <clinit>() -> <clinit>
 android.support.v4.app.Fragment$1 -> android.support.v4.app.k:
     android.support.v4.app.Fragment this$0 -> a
@@ -758,6 +759,9 @@ android.support.v4.app.SharedElementCallback -> android.support.v4.app.U:
     void <clinit>() -> <clinit>
 android.support.v4.app.SuperNotCalledException -> android.support.v4.app.V:
     void <init>(java.lang.String) -> <init>
+android.support.v4.content.ContextCompat -> android.support.v4.content.a:
+    android.graphics.drawable.Drawable getDrawable(android.content.Context,int) -> a
+    android.content.res.ColorStateList getColorStateList(android.content.Context,int) -> b
 android.support.v4.content.FileProvider -> android.support.v4.content.FileProvider:
     java.lang.String[] COLUMNS -> a
     java.io.File DEVICE_ROOT -> b
@@ -775,15 +779,15 @@ android.support.v4.content.FileProvider -> android.support.v4.content.FileProvid
     android.support.v4.content.FileProvider$PathStrategy getPathStrategy(android.content.Context,java.lang.String) -> a
     java.io.File buildPath(java.io.File,java.lang.String[]) -> a
     void <clinit>() -> <clinit>
-android.support.v4.content.FileProvider$PathStrategy -> android.support.v4.content.a:
+android.support.v4.content.FileProvider$PathStrategy -> android.support.v4.content.b:
     java.io.File getFileForUri(android.net.Uri) -> a
-android.support.v4.content.FileProvider$SimplePathStrategy -> android.support.v4.content.b:
+android.support.v4.content.FileProvider$SimplePathStrategy -> android.support.v4.content.c:
     java.lang.String mAuthority -> a
     java.util.HashMap mRoots -> b
     void <init>(java.lang.String) -> <init>
     void addRoot(java.lang.String,java.io.File) -> a
     java.io.File getFileForUri(android.net.Uri) -> a
-android.support.v4.content.Loader -> android.support.v4.content.c:
+android.support.v4.content.Loader -> android.support.v4.content.d:
     int mId -> a
     android.support.v4.content.Loader$OnLoadCompleteListener mListener -> b
     android.support.v4.content.Loader$OnLoadCanceledListener mOnLoadCanceledListener -> c
@@ -801,8 +805,8 @@ android.support.v4.content.Loader -> android.support.v4.content.c:
     void reset() -> c
     java.lang.String toString() -> toString
     void dump$ec96877(java.lang.String,java.io.PrintWriter) -> a
-android.support.v4.content.Loader$OnLoadCanceledListener -> android.support.v4.content.d:
-android.support.v4.content.Loader$OnLoadCompleteListener -> android.support.v4.content.e:
+android.support.v4.content.Loader$OnLoadCanceledListener -> android.support.v4.content.e:
+android.support.v4.content.Loader$OnLoadCompleteListener -> android.support.v4.content.f:
 android.support.v4.content.WakefulBroadcastReceiver -> android.support.v4.content.WakefulBroadcastReceiver:
     android.util.SparseArray mActiveWakeLocks -> a
     int mNextId -> b
@@ -6189,7 +6193,7 @@ com.google.android.gms.common.api.internal.zzw -> com.google.android.gms.common.
     void <init>() -> <init>
     com.google.android.gms.common.api.internal.zzw zza(android.support.v4.app.FragmentActivity) -> a
     com.google.android.gms.common.api.internal.zzw zzb(android.support.v4.app.FragmentActivity) -> b
-    com.google.android.gms.common.api.internal.zzw zzpO() -> u
+    com.google.android.gms.common.api.internal.zzw zzpO() -> v
     void zza(int,com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.common.api.GoogleApiClient$OnConnectionFailedListener) -> a
     void onCancel(android.content.DialogInterface) -> onCancel
     void onCreate(android.os.Bundle) -> a
@@ -12368,25 +12372,25 @@ com.hanaone.http.DownloadHelper -> com.hanaone.a.b:
 com.hanaone.http.JsonReaderHelper -> com.hanaone.a.c:
     java.util.List readExams(java.io.File) -> a
     java.util.List readSections(java.io.File) -> b
-    com.hanaone.tprd.db.FileDataSet readFileDataset(java.io.File) -> c
+    com.hanaone.tpwr.db.FileDataSet readFileDataset(java.io.File) -> c
     java.util.List readSections(android.util.JsonReader) -> a
-    com.hanaone.tprd.db.SectionDataSet readSection(android.util.JsonReader) -> b
-    com.hanaone.tprd.db.QuestionDataSet readQuestion(android.util.JsonReader) -> c
-    com.hanaone.tprd.db.ChoiceDataSet readChoice(android.util.JsonReader) -> d
+    com.hanaone.tpwr.db.SectionDataSet readSection(android.util.JsonReader) -> b
+    com.hanaone.tpwr.db.QuestionDataSet readQuestion(android.util.JsonReader) -> c
+    com.hanaone.tpwr.db.ChoiceDataSet readChoice(android.util.JsonReader) -> d
     java.util.List readExams(android.util.JsonReader) -> e
-    com.hanaone.tprd.db.ExamDataSet readExam(android.util.JsonReader) -> f
-    com.hanaone.tprd.db.LevelDataSet readLevel(android.util.JsonReader) -> g
+    com.hanaone.tpwr.db.ExamDataSet readExam(android.util.JsonReader) -> f
+    com.hanaone.tpwr.db.LevelDataSet readLevel(android.util.JsonReader) -> g
 com.hanaone.jni.JNIHanaone -> com.hanaone.jni.JNIHanaone:
     void <clinit>() -> <clinit>
     void <init>() -> <init>
     java.lang.String stringFromJNI() -> stringFromJNI
-com.hanaone.tprd.Constants -> com.hanaone.tprd.a:
+com.hanaone.tpwr.Constants -> com.hanaone.tpwr.a:
     java.lang.String PATH -> a
     void <clinit>() -> <clinit>
     java.lang.String getInternalRootPath(android.content.Context) -> a
     java.lang.String getInternalPath(android.content.Context,java.lang.String) -> a
     java.lang.String getExternalRootPath(android.content.Context) -> b
-com.hanaone.tprd.HelpActivity -> com.hanaone.tprd.HelpActivity:
+com.hanaone.tpwr.HelpActivity -> com.hanaone.tpwr.HelpActivity:
     android.content.Context mContext -> a
     android.widget.Spinner spLanguage -> b
     boolean userIsInteracting -> c
@@ -12399,25 +12403,29 @@ com.hanaone.tprd.HelpActivity -> com.hanaone.tprd.HelpActivity:
     void onBackPressed() -> onBackPressed
     void onInit() -> a
     void shareApp() -> b
-    boolean access$0(com.hanaone.tprd.HelpActivity) -> a
-    android.content.Context access$1(com.hanaone.tprd.HelpActivity) -> b
-    void access$2$f815e56(com.hanaone.tprd.HelpActivity) -> c
-    void access$3$f815e56(com.hanaone.tprd.HelpActivity) -> d
-com.hanaone.tprd.HelpActivity$1 -> com.hanaone.tprd.b:
-    com.hanaone.tprd.HelpActivity this$0 -> a
-    void <init>(com.hanaone.tprd.HelpActivity) -> <init>
+    android.content.Context access$0(com.hanaone.tpwr.HelpActivity) -> a
+    boolean access$1(com.hanaone.tpwr.HelpActivity) -> b
+    void access$2$2c305b33(com.hanaone.tpwr.HelpActivity) -> c
+    void access$3$2c305b33(com.hanaone.tpwr.HelpActivity) -> d
+com.hanaone.tpwr.HelpActivity$1 -> com.hanaone.tpwr.b:
+    com.hanaone.tpwr.HelpActivity this$0 -> a
+    void <init>(com.hanaone.tpwr.HelpActivity) -> <init>
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+com.hanaone.tpwr.HelpActivity$2 -> com.hanaone.tpwr.c:
+    com.hanaone.tpwr.HelpActivity this$0 -> a
+    void <init>(com.hanaone.tpwr.HelpActivity) -> <init>
     void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
     void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
-com.hanaone.tprd.MainActivity -> com.hanaone.tprd.MainActivity:
+com.hanaone.tpwr.MainActivity -> com.hanaone.tpwr.MainActivity:
     android.content.Context mContext -> a
-    com.hanaone.tprd.adapter.DatabaseAdapter dbAdapter -> b
+    com.hanaone.tpwr.adapter.DatabaseAdapter dbAdapter -> b
     android.widget.ListView listExam -> c
     java.util.List listItem -> d
     java.util.List list -> e
-    com.hanaone.tprd.adapter.ListExamHeaderAdapter adapter -> f
+    com.hanaone.tpwr.adapter.ListExamHeaderAdapter adapter -> f
     android.widget.ImageView imgSync -> g
     android.widget.LinearLayout layoutSync -> h
-    com.hanaone.tprd.adapter.ListLevelListener mListener -> i
+    com.hanaone.tpwr.adapter.ListLevelListener mListener -> i
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
     void onResume() -> onResume
@@ -12426,61 +12434,61 @@ com.hanaone.tprd.MainActivity -> com.hanaone.tprd.MainActivity:
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
     void updateData() -> a
     void initLayout() -> b
-    void confirmDownload(com.hanaone.tprd.db.LevelDataSet,com.hanaone.tprd.adapter.DownloadInfo) -> a
+    void confirmDownload(com.hanaone.tpwr.db.LevelDataSet,com.hanaone.tpwr.adapter.DownloadInfo) -> a
     void onBackPressed() -> onBackPressed
-    android.content.Context access$0(com.hanaone.tprd.MainActivity) -> a
-    com.hanaone.tprd.adapter.ListLevelListener access$1(com.hanaone.tprd.MainActivity) -> b
-    com.hanaone.tprd.adapter.DatabaseAdapter access$2(com.hanaone.tprd.MainActivity) -> c
-    java.util.List access$3(com.hanaone.tprd.MainActivity) -> d
-    java.util.List access$4(com.hanaone.tprd.MainActivity) -> e
-    com.hanaone.tprd.adapter.ListExamHeaderAdapter access$5(com.hanaone.tprd.MainActivity) -> f
-    android.widget.ImageView access$6(com.hanaone.tprd.MainActivity) -> g
-    android.widget.LinearLayout access$7(com.hanaone.tprd.MainActivity) -> h
-com.hanaone.tprd.MainActivity$1 -> com.hanaone.tprd.c:
-    com.hanaone.tprd.MainActivity this$0 -> a
-    void <init>(com.hanaone.tprd.MainActivity) -> <init>
+    android.content.Context access$0(com.hanaone.tpwr.MainActivity) -> a
+    com.hanaone.tpwr.adapter.ListLevelListener access$1(com.hanaone.tpwr.MainActivity) -> b
+    com.hanaone.tpwr.adapter.DatabaseAdapter access$2(com.hanaone.tpwr.MainActivity) -> c
+    java.util.List access$3(com.hanaone.tpwr.MainActivity) -> d
+    java.util.List access$4(com.hanaone.tpwr.MainActivity) -> e
+    com.hanaone.tpwr.adapter.ListExamHeaderAdapter access$5(com.hanaone.tpwr.MainActivity) -> f
+    android.widget.ImageView access$6(com.hanaone.tpwr.MainActivity) -> g
+    android.widget.LinearLayout access$7(com.hanaone.tpwr.MainActivity) -> h
+com.hanaone.tpwr.MainActivity$1 -> com.hanaone.tpwr.d:
+    com.hanaone.tpwr.MainActivity this$0 -> a
+    void <init>(com.hanaone.tpwr.MainActivity) -> <init>
     void onSelect(int,java.lang.String) -> a
-    void onSelect(com.hanaone.tprd.db.LevelDataSet,com.hanaone.tprd.adapter.DownloadInfo) -> a
-com.hanaone.tprd.MainActivity$2 -> com.hanaone.tprd.d:
-    com.hanaone.tprd.MainActivity this$0 -> a
-    com.hanaone.tprd.adapter.DownloadInfo val$info -> b
-    com.hanaone.tprd.adapter.DownloadLevelAdapter val$dlAdapter -> c
+    void onSelect(com.hanaone.tpwr.db.LevelDataSet,com.hanaone.tpwr.adapter.DownloadInfo) -> a
+com.hanaone.tpwr.MainActivity$2 -> com.hanaone.tpwr.e:
+    com.hanaone.tpwr.MainActivity this$0 -> a
+    com.hanaone.tpwr.adapter.DownloadInfo val$info -> b
+    com.hanaone.tpwr.adapter.DownloadLevelAdapter val$dlAdapter -> c
     android.app.Dialog val$dialog -> d
-    void <init>(com.hanaone.tprd.MainActivity,com.hanaone.tprd.adapter.DownloadInfo,com.hanaone.tprd.adapter.DownloadLevelAdapter,android.app.Dialog) -> <init>
+    void <init>(com.hanaone.tpwr.MainActivity,com.hanaone.tpwr.adapter.DownloadInfo,com.hanaone.tpwr.adapter.DownloadLevelAdapter,android.app.Dialog) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.MainActivity$3 -> com.hanaone.tprd.e:
-    com.hanaone.tprd.MainActivity this$0 -> a
+com.hanaone.tpwr.MainActivity$3 -> com.hanaone.tpwr.f:
+    com.hanaone.tpwr.MainActivity this$0 -> a
     android.app.Dialog val$dialog -> b
-    void <init>(com.hanaone.tprd.MainActivity,android.app.Dialog) -> <init>
+    void <init>(com.hanaone.tpwr.MainActivity,android.app.Dialog) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.MainActivity$4 -> com.hanaone.tprd.f:
-    com.hanaone.tprd.MainActivity this$0 -> a
+com.hanaone.tpwr.MainActivity$4 -> com.hanaone.tpwr.g:
+    com.hanaone.tpwr.MainActivity this$0 -> a
     android.app.Dialog val$dialog -> b
-    void <init>(com.hanaone.tprd.MainActivity,android.app.Dialog) -> <init>
+    void <init>(com.hanaone.tpwr.MainActivity,android.app.Dialog) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.MainActivity$LoadingNewData -> com.hanaone.tprd.g:
-    com.hanaone.tprd.MainActivity this$0 -> a
-    void <init>(com.hanaone.tprd.MainActivity) -> <init>
+com.hanaone.tpwr.MainActivity$LoadingNewData -> com.hanaone.tpwr.h:
+    com.hanaone.tpwr.MainActivity this$0 -> a
+    void <init>(com.hanaone.tpwr.MainActivity) -> <init>
     java.lang.Void doInBackground$10299ca() -> a
     void onPreExecute() -> onPreExecute
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
     void onProgressUpdate(java.lang.Object[]) -> onProgressUpdate
-    void <init>(com.hanaone.tprd.MainActivity,byte) -> <init>
-com.hanaone.tprd.QuestionActivity -> com.hanaone.tprd.QuestionActivity:
+    void <init>(com.hanaone.tpwr.MainActivity,byte) -> <init>
+com.hanaone.tpwr.QuestionActivity -> com.hanaone.tpwr.QuestionActivity:
     android.content.Context mContext -> i
     android.support.v4.view.ViewPager mPager -> j
     android.support.v4.view.PagerAdapter mPagerAdapter -> k
-    com.hanaone.tprd.db.LevelDataSet level -> l
+    com.hanaone.tpwr.db.LevelDataSet level -> l
     java.lang.String mMode -> m
     int currentItem -> n
-    com.hanaone.tprd.adapter.DatabaseAdapter dbAdapter -> o
+    com.hanaone.tpwr.adapter.DatabaseAdapter dbAdapter -> o
     int questionNumber -> p
     android.widget.ListView mList -> q
-    com.hanaone.tprd.adapter.ListSectionAdapter mListAdapter -> r
-    com.hanaone.tprd.view.DigitalClockView clock -> s
+    com.hanaone.tpwr.adapter.ListSectionAdapter mListAdapter -> r
+    com.hanaone.tpwr.view.DigitalClockView clock -> s
     boolean activityPaused -> t
-    com.hanaone.tprd.adapter.ListAdapterListener mListener -> u
+    com.hanaone.tpwr.adapter.ListAdapterListener mListener -> u
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
     void onInit() -> c
@@ -12495,146 +12503,154 @@ com.hanaone.tprd.QuestionActivity -> com.hanaone.tprd.QuestionActivity:
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
     android.view.View onCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet) -> onCreateView
     android.view.View onCreateView(java.lang.String,android.content.Context,android.util.AttributeSet) -> onCreateView
-    void access$2(com.hanaone.tprd.QuestionActivity,int) -> a
-    int access$3(com.hanaone.tprd.QuestionActivity) -> a
-    com.hanaone.tprd.db.LevelDataSet access$4(com.hanaone.tprd.QuestionActivity) -> b
-    android.content.Context access$5(com.hanaone.tprd.QuestionActivity) -> c
-com.hanaone.tprd.QuestionActivity$1 -> com.hanaone.tprd.h:
-    com.hanaone.tprd.QuestionActivity this$0 -> a
-    void <init>(com.hanaone.tprd.QuestionActivity) -> <init>
+    void access$2(com.hanaone.tpwr.QuestionActivity,int) -> a
+    int access$3(com.hanaone.tpwr.QuestionActivity) -> a
+    com.hanaone.tpwr.db.LevelDataSet access$4(com.hanaone.tpwr.QuestionActivity) -> b
+    android.content.Context access$5(com.hanaone.tpwr.QuestionActivity) -> c
+com.hanaone.tpwr.QuestionActivity$1 -> com.hanaone.tpwr.i:
+    com.hanaone.tpwr.QuestionActivity this$0 -> a
+    void <init>(com.hanaone.tpwr.QuestionActivity) -> <init>
     void onSelect(int,int) -> a
-com.hanaone.tprd.QuestionActivity$2 -> com.hanaone.tprd.i:
-    com.hanaone.tprd.QuestionActivity this$0 -> a
-    void <init>(com.hanaone.tprd.QuestionActivity) -> <init>
+com.hanaone.tpwr.QuestionActivity$2 -> com.hanaone.tpwr.j:
+    com.hanaone.tpwr.QuestionActivity this$0 -> a
+    void <init>(com.hanaone.tpwr.QuestionActivity) -> <init>
     void onPageSelected(int) -> a
-com.hanaone.tprd.QuestionSlideFragment -> com.hanaone.tprd.j:
+com.hanaone.tpwr.QuestionSlideFragment -> com.hanaone.tpwr.k:
     java.util.ArrayList mSections -> a
+    boolean isShowHint -> b
+    boolean cheat -> c
     void <init>() -> <init>
-    com.hanaone.tprd.QuestionSlideFragment create(java.util.ArrayList) -> a
+    com.hanaone.tpwr.QuestionSlideFragment create(java.util.ArrayList) -> a
     void onCreate(android.os.Bundle) -> a
     android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
-    void showDownloadDialog(com.hanaone.tprd.db.FileDataSet) -> a
+    void showDownloadDialog(com.hanaone.tpwr.db.FileDataSet) -> a
     void onFinishNotify(boolean) -> c
-    void access$0(com.hanaone.tprd.QuestionSlideFragment,com.hanaone.tprd.db.QuestionDataSet,int,java.util.List) -> a
-com.hanaone.tprd.QuestionSlideFragment$1 -> com.hanaone.tprd.k:
-    com.hanaone.tprd.QuestionSlideFragment this$0 -> a
-    com.hanaone.tprd.db.SectionDataSet val$section -> b
-    void <init>(com.hanaone.tprd.QuestionSlideFragment,com.hanaone.tprd.db.SectionDataSet) -> <init>
+    void access$0(com.hanaone.tpwr.QuestionSlideFragment,int) -> a
+com.hanaone.tpwr.QuestionSlideFragment$1 -> com.hanaone.tpwr.l:
+    com.hanaone.tpwr.QuestionSlideFragment this$0 -> a
+    com.hanaone.tpwr.db.SectionDataSet val$section -> b
+    void <init>(com.hanaone.tpwr.QuestionSlideFragment,com.hanaone.tpwr.db.SectionDataSet) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.QuestionSlideFragment$2 -> com.hanaone.tprd.l:
-    com.hanaone.tprd.QuestionSlideFragment this$0 -> a
-    com.hanaone.tprd.db.QuestionDataSet val$question -> b
-    void <init>(com.hanaone.tprd.QuestionSlideFragment,com.hanaone.tprd.db.QuestionDataSet) -> <init>
+com.hanaone.tpwr.QuestionSlideFragment$2 -> com.hanaone.tpwr.m:
+    com.hanaone.tpwr.QuestionSlideFragment this$0 -> a
+    com.hanaone.tpwr.db.QuestionDataSet val$question -> b
+    void <init>(com.hanaone.tpwr.QuestionSlideFragment,com.hanaone.tpwr.db.QuestionDataSet) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.QuestionSlideFragment$3 -> com.hanaone.tprd.m:
-    com.hanaone.tprd.QuestionSlideFragment this$0 -> a
-    com.hanaone.tprd.db.ChoiceDataSet val$choice -> b
-    void <init>(com.hanaone.tprd.QuestionSlideFragment,com.hanaone.tprd.db.ChoiceDataSet) -> <init>
+com.hanaone.tpwr.QuestionSlideFragment$3 -> com.hanaone.tpwr.n:
+    com.hanaone.tpwr.QuestionSlideFragment this$0 -> a
+    android.widget.TextView val$txtHint -> b
+    android.widget.Button val$btnHint -> c
+    void <init>(com.hanaone.tpwr.QuestionSlideFragment,android.widget.TextView,android.widget.Button) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.QuestionSlideFragment$4 -> com.hanaone.tprd.n:
-    com.hanaone.tprd.QuestionSlideFragment this$0 -> a
-    com.hanaone.tprd.db.QuestionDataSet val$question -> b
-    int val$pos -> c
-    java.util.List val$btnChoices -> d
-    void <init>(com.hanaone.tprd.QuestionSlideFragment,com.hanaone.tprd.db.QuestionDataSet,int,java.util.List) -> <init>
+com.hanaone.tpwr.QuestionSlideFragment$4 -> com.hanaone.tpwr.o:
+    com.hanaone.tpwr.QuestionSlideFragment this$0 -> a
+    android.widget.Button val$btnSave -> b
+    com.hanaone.tpwr.db.ChoiceDataSet val$choice -> c
+    android.widget.EditText val$edtAnswer -> d
+    com.hanaone.tpwr.db.QuestionDataSet val$question -> e
+    void <init>(com.hanaone.tpwr.QuestionSlideFragment,android.widget.Button,com.hanaone.tpwr.db.ChoiceDataSet,android.widget.EditText,com.hanaone.tpwr.db.QuestionDataSet) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.QuestionSlideFragment$5 -> com.hanaone.tprd.o:
-    com.hanaone.tprd.QuestionSlideFragment this$0 -> a
+com.hanaone.tpwr.QuestionSlideFragment$5 -> com.hanaone.tpwr.p:
+    com.hanaone.tpwr.QuestionSlideFragment this$0 -> a
     android.app.Dialog val$dialog -> b
-    void <init>(com.hanaone.tprd.QuestionSlideFragment,android.app.Dialog) -> <init>
+    void <init>(com.hanaone.tpwr.QuestionSlideFragment,android.app.Dialog) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.ResultActivity -> com.hanaone.tprd.ResultActivity:
+com.hanaone.tpwr.QuestionSlideFragment$6 -> com.hanaone.tpwr.q:
+    com.hanaone.tpwr.QuestionSlideFragment this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void <init>(com.hanaone.tpwr.QuestionSlideFragment,android.app.Dialog) -> <init>
+    void onClick(android.view.View) -> onClick
+com.hanaone.tpwr.R -> com.hanaone.tpwr.r:
+com.hanaone.tpwr.R$styleable -> com.hanaone.tpwr.s:
+    int[] AdsAttrs -> a
+    int[] CustomWalletTheme -> b
+    int[] LoadingImageView -> c
+    int[] MapAttrs -> d
+    int[] SignInButton -> e
+    int[] SwitchButton -> f
+    int[] WalletFragmentOptions -> g
+    int[] WalletFragmentStyle -> h
+    void <clinit>() -> <clinit>
+com.hanaone.tpwr.ResultActivity -> com.hanaone.tpwr.ResultActivity:
     android.content.Context mContext -> a
-    com.hanaone.tprd.db.LevelDataSet level -> b
+    com.hanaone.tpwr.db.LevelDataSet level -> b
     java.util.ArrayList listResult -> c
     int score -> d
     java.lang.String mode -> e
     int maxScore -> f
-    int correct -> g
-    int wrong -> h
-    int noAnswer -> i
-    com.google.android.gms.ads.InterstitialAd minInterstitialAd -> j
-    com.hanaone.tprd.adapter.ListAdapterListener mListener -> k
+    com.google.android.gms.ads.InterstitialAd minInterstitialAd -> g
+    com.hanaone.tpwr.adapter.ListAdapterListener mListener -> h
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
     void onClick(android.view.View) -> onClick
     void onBackPressed() -> onBackPressed
     void requestNewInterstitial() -> a
     void goHome() -> b
-    android.content.Context access$0(com.hanaone.tprd.ResultActivity) -> a
-    com.hanaone.tprd.db.LevelDataSet access$1(com.hanaone.tprd.ResultActivity) -> b
-    java.util.ArrayList access$2(com.hanaone.tprd.ResultActivity) -> c
-    com.hanaone.tprd.adapter.ListAdapterListener access$3(com.hanaone.tprd.ResultActivity) -> d
-    void access$4(com.hanaone.tprd.ResultActivity) -> e
-    void access$5(com.hanaone.tprd.ResultActivity) -> f
-    void access$6(com.hanaone.tprd.ResultActivity) -> g
-com.hanaone.tprd.ResultActivity$1 -> com.hanaone.tprd.p:
-    com.hanaone.tprd.ResultActivity this$0 -> a
-    void <init>(com.hanaone.tprd.ResultActivity) -> <init>
+    android.content.Context access$0(com.hanaone.tpwr.ResultActivity) -> a
+    com.hanaone.tpwr.db.LevelDataSet access$1(com.hanaone.tpwr.ResultActivity) -> b
+    java.util.ArrayList access$2(com.hanaone.tpwr.ResultActivity) -> c
+    com.hanaone.tpwr.adapter.ListAdapterListener access$3(com.hanaone.tpwr.ResultActivity) -> d
+    void access$4(com.hanaone.tpwr.ResultActivity) -> e
+    void access$5(com.hanaone.tpwr.ResultActivity) -> f
+com.hanaone.tpwr.ResultActivity$1 -> com.hanaone.tpwr.t:
+    com.hanaone.tpwr.ResultActivity this$0 -> a
+    void <init>(com.hanaone.tpwr.ResultActivity) -> <init>
     void onSelect(int,int) -> a
-com.hanaone.tprd.ResultActivity$2 -> com.hanaone.tprd.q:
-    com.hanaone.tprd.ResultActivity this$0 -> a
-    void <init>(com.hanaone.tprd.ResultActivity) -> <init>
+com.hanaone.tpwr.ResultActivity$2 -> com.hanaone.tpwr.u:
+    com.hanaone.tpwr.ResultActivity this$0 -> a
+    void <init>(com.hanaone.tpwr.ResultActivity) -> <init>
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-com.hanaone.tprd.ResultActivity$3 -> com.hanaone.tprd.r:
-    com.hanaone.tprd.ResultActivity this$0 -> a
-    void <init>(com.hanaone.tprd.ResultActivity) -> <init>
+com.hanaone.tpwr.ResultActivity$3 -> com.hanaone.tpwr.v:
+    com.hanaone.tpwr.ResultActivity this$0 -> a
+    void <init>(com.hanaone.tpwr.ResultActivity) -> <init>
     void onAdClosed() -> c
-com.hanaone.tprd.ResultActivity$4 -> com.hanaone.tprd.s:
-    com.hanaone.tprd.ResultActivity this$0 -> a
-    void <init>(com.hanaone.tprd.ResultActivity) -> <init>
-    void run() -> run
-com.hanaone.tprd.ResultActivity$5 -> com.hanaone.tprd.t:
-    com.hanaone.tprd.ResultActivity this$0 -> a
-    android.app.Dialog val$dialog -> b
-    void <init>(com.hanaone.tprd.ResultActivity,android.app.Dialog) -> <init>
-    void onClick(android.view.View) -> onClick
-com.hanaone.tprd.SelectionActivity -> com.hanaone.tprd.SelectionActivity:
+com.hanaone.tpwr.SelectionActivity -> com.hanaone.tpwr.SelectionActivity:
     android.content.Context mContext -> a
     android.widget.TextView txtName -> b
     int levelId -> c
-    com.hanaone.tprd.adapter.DatabaseAdapter dbAdapter -> d
+    com.hanaone.tpwr.adapter.DatabaseAdapter dbAdapter -> d
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
     void onClick(android.view.View) -> onClick
     void showDialog(java.lang.String) -> a
-com.hanaone.tprd.SelectionActivity$1 -> com.hanaone.tprd.u:
-    com.hanaone.tprd.SelectionActivity this$0 -> a
+com.hanaone.tpwr.SelectionActivity$1 -> com.hanaone.tpwr.w:
+    com.hanaone.tpwr.SelectionActivity this$0 -> a
     android.app.Dialog val$dialog -> b
-    void <init>(com.hanaone.tprd.SelectionActivity,android.app.Dialog) -> <init>
+    void <init>(com.hanaone.tpwr.SelectionActivity,android.app.Dialog) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.adapter.DatabaseAdapter -> com.hanaone.tprd.a.a:
+com.hanaone.tpwr.adapter.DatabaseAdapter -> com.hanaone.tpwr.a.a:
     android.content.Context mContext -> a
-    com.hanaone.tprd.adapter.DatabaseHelper dbHelper -> b
+    com.hanaone.tpwr.adapter.DatabaseHelper dbHelper -> b
     com.hanaone.http.DownloadHelper dlHelper -> c
     void <init>(android.content.Context) -> <init>
     java.util.List getAllExam() -> a
     boolean checkExam(int) -> a
-    void addExam(com.hanaone.tprd.db.ExamDataSet) -> a
-    com.hanaone.tprd.db.LevelDataSet getLevel(int) -> b
+    void addExam(com.hanaone.tpwr.db.ExamDataSet) -> a
+    com.hanaone.tpwr.db.LevelDataSet getLevel(int) -> b
     int updateLevelActive$2563259(int) -> c
     int updateLevelTxt(int,java.lang.String,java.lang.String) -> a
     int updateLevelScore(int,int) -> a
-    void addSection(com.hanaone.tprd.db.SectionDataSet,int) -> a
-    com.hanaone.tprd.db.LevelDataSet generateSampleTest(int) -> d
+    void addSection(com.hanaone.tpwr.db.SectionDataSet,int) -> a
+    com.hanaone.tpwr.db.LevelDataSet generateSampleTest(int) -> d
     boolean checkLevel(int) -> e
-    int updateFile(com.hanaone.tprd.db.FileDataSet) -> a
-com.hanaone.tprd.adapter.DatabaseHelper -> com.hanaone.tprd.a.b:
-    com.hanaone.tprd.adapter.DatabaseHelper sInstance -> a
+    int updateFile(com.hanaone.tpwr.db.FileDataSet) -> a
+    int updateChoice(com.hanaone.tpwr.db.ChoiceDataSet,int) -> a
+com.hanaone.tpwr.adapter.DatabaseHelper -> com.hanaone.tpwr.a.b:
+    com.hanaone.tpwr.adapter.DatabaseHelper sInstance -> a
     int openConnection -> b
-    com.hanaone.tprd.adapter.DatabaseHelper getInstance(android.content.Context) -> a
+    com.hanaone.tpwr.adapter.DatabaseHelper getInstance(android.content.Context) -> a
     void <init>(android.content.Context) -> <init>
     void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
     void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
-    long insert(com.hanaone.tprd.db.model.Model) -> a
+    long insert(com.hanaone.tpwr.db.model.Model) -> a
     int update(java.lang.Object) -> a
     java.util.List selectAllExam() -> a
-    com.hanaone.tprd.db.model.Examination selectExamByNumber(int) -> a
+    com.hanaone.tpwr.db.model.Examination selectExamByNumber(int) -> a
     java.util.List selectExamLevelByExamNumber(int) -> b
-    com.hanaone.tprd.db.model.FileExtra selectFileById(int) -> c
-    com.hanaone.tprd.db.model.ExamLevel selectExamLevelById(int) -> d
+    com.hanaone.tpwr.db.model.FileExtra selectFileById(int) -> c
+    com.hanaone.tpwr.db.model.ExamLevel selectExamLevelById(int) -> d
     java.util.List selectSectionByExamLevelId(int) -> e
-    com.hanaone.tprd.db.model.Section selectSectionByQuestionId(int) -> f
+    com.hanaone.tpwr.db.model.Section selectSectionByQuestionId(int) -> f
     java.util.List selectQuestionBySectionId(int) -> g
     java.util.List selectChoiceByQuestionId(int) -> h
     java.util.List selectionQuestionByExamLevelAndQuestionNumber$55093e87(int,int) -> a
@@ -12642,26 +12658,26 @@ com.hanaone.tprd.adapter.DatabaseHelper -> com.hanaone.tprd.a.b:
     android.database.sqlite.SQLiteDatabase getReadableDatabaseFix() -> b
     android.database.sqlite.SQLiteDatabase getWritableDatabaseFix() -> c
     void closeFix() -> d
-com.hanaone.tprd.adapter.DownloadFileAdapter -> com.hanaone.tprd.a.c:
-    com.hanaone.tprd.db.FileDataSet fileData -> a
-    com.hanaone.tprd.adapter.DownloadInfo info -> b
+com.hanaone.tpwr.adapter.DownloadFileAdapter -> com.hanaone.tpwr.a.c:
+    com.hanaone.tpwr.db.FileDataSet fileData -> a
+    com.hanaone.tpwr.adapter.DownloadInfo info -> b
     android.content.Context mContext -> c
-    com.hanaone.tprd.adapter.DatabaseAdapter dbAdapter -> d
+    com.hanaone.tpwr.adapter.DatabaseAdapter dbAdapter -> d
     android.app.Dialog dialog -> e
-    com.hanaone.tprd.adapter.DownloadListener downloadListener -> f
+    com.hanaone.tpwr.adapter.DownloadListener downloadListener -> f
     android.os.Handler mHandler -> g
-    void <init>(com.hanaone.tprd.db.FileDataSet,com.hanaone.tprd.adapter.DownloadInfo,android.content.Context,com.hanaone.tprd.adapter.DatabaseAdapter,android.app.Dialog,com.hanaone.tprd.adapter.DownloadListener) -> <init>
+    void <init>(com.hanaone.tpwr.db.FileDataSet,com.hanaone.tpwr.adapter.DownloadInfo,android.content.Context,com.hanaone.tpwr.adapter.DatabaseAdapter,android.app.Dialog,com.hanaone.tpwr.adapter.DownloadListener) -> <init>
     void onPreExecute() -> onPreExecute
     java.lang.Boolean doInBackground$5f8445a4() -> a
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
     void onProgressUpdate(java.lang.Object[]) -> onProgressUpdate
-    com.hanaone.tprd.adapter.DownloadInfo access$3(com.hanaone.tprd.adapter.DownloadFileAdapter) -> a
-com.hanaone.tprd.adapter.DownloadFileAdapter$1 -> com.hanaone.tprd.a.d:
-    com.hanaone.tprd.adapter.DownloadFileAdapter this$0 -> a
-    void <init>(com.hanaone.tprd.adapter.DownloadFileAdapter) -> <init>
+    com.hanaone.tpwr.adapter.DownloadInfo access$3(com.hanaone.tpwr.adapter.DownloadFileAdapter) -> a
+com.hanaone.tpwr.adapter.DownloadFileAdapter$1 -> com.hanaone.tpwr.a.d:
+    com.hanaone.tpwr.adapter.DownloadFileAdapter this$0 -> a
+    void <init>(com.hanaone.tpwr.adapter.DownloadFileAdapter) -> <init>
     void handleMessage(android.os.Message) -> handleMessage
-com.hanaone.tprd.adapter.DownloadInfo -> com.hanaone.tprd.a.e:
+com.hanaone.tpwr.adapter.DownloadInfo -> com.hanaone.tpwr.a.e:
     android.widget.ProgressBar prgBar -> a
     android.widget.RelativeLayout layout -> b
     android.widget.TextView txtPer -> c
@@ -12681,33 +12697,33 @@ com.hanaone.tprd.adapter.DownloadInfo -> com.hanaone.tprd.a.e:
     void setProgress(int) -> b
     android.widget.TextView getTxtSize() -> f
     void setTxtSize(android.widget.TextView) -> b
-com.hanaone.tprd.adapter.DownloadLevelAdapter -> com.hanaone.tprd.a.f:
-    com.hanaone.tprd.db.LevelDataSet level -> a
-    com.hanaone.tprd.adapter.DownloadInfo info -> b
+com.hanaone.tpwr.adapter.DownloadLevelAdapter -> com.hanaone.tpwr.a.f:
+    com.hanaone.tpwr.db.LevelDataSet level -> a
+    com.hanaone.tpwr.adapter.DownloadInfo info -> b
     android.content.Context mContext -> c
-    com.hanaone.tprd.adapter.DatabaseAdapter dbAdapter -> d
+    com.hanaone.tpwr.adapter.DatabaseAdapter dbAdapter -> d
     android.os.Handler mHandler -> e
-    void <init>(android.content.Context,com.hanaone.tprd.db.LevelDataSet,com.hanaone.tprd.adapter.DownloadInfo,com.hanaone.tprd.adapter.DatabaseAdapter) -> <init>
+    void <init>(android.content.Context,com.hanaone.tpwr.db.LevelDataSet,com.hanaone.tpwr.adapter.DownloadInfo,com.hanaone.tpwr.adapter.DatabaseAdapter) -> <init>
     void onPreExecute() -> onPreExecute
     java.lang.Boolean doInBackground$5f8445a4() -> a
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
     void onProgressUpdate(java.lang.Object[]) -> onProgressUpdate
-    com.hanaone.tprd.adapter.DatabaseAdapter access$3(com.hanaone.tprd.adapter.DownloadLevelAdapter) -> a
-    com.hanaone.tprd.db.LevelDataSet access$4(com.hanaone.tprd.adapter.DownloadLevelAdapter) -> b
-    void access$5(com.hanaone.tprd.adapter.DownloadLevelAdapter,java.lang.String) -> a
-    com.hanaone.tprd.adapter.DownloadInfo access$6(com.hanaone.tprd.adapter.DownloadLevelAdapter) -> c
-com.hanaone.tprd.adapter.DownloadLevelAdapter$1 -> com.hanaone.tprd.a.g:
-    com.hanaone.tprd.adapter.DownloadLevelAdapter this$0 -> a
-    void <init>(com.hanaone.tprd.adapter.DownloadLevelAdapter) -> <init>
+    com.hanaone.tpwr.adapter.DatabaseAdapter access$3(com.hanaone.tpwr.adapter.DownloadLevelAdapter) -> a
+    com.hanaone.tpwr.db.LevelDataSet access$4(com.hanaone.tpwr.adapter.DownloadLevelAdapter) -> b
+    void access$5(com.hanaone.tpwr.adapter.DownloadLevelAdapter,java.lang.String) -> a
+    com.hanaone.tpwr.adapter.DownloadInfo access$6(com.hanaone.tpwr.adapter.DownloadLevelAdapter) -> c
+com.hanaone.tpwr.adapter.DownloadLevelAdapter$1 -> com.hanaone.tpwr.a.g:
+    com.hanaone.tpwr.adapter.DownloadLevelAdapter this$0 -> a
+    void <init>(com.hanaone.tpwr.adapter.DownloadLevelAdapter) -> <init>
     void handleMessage(android.os.Message) -> handleMessage
-com.hanaone.tprd.adapter.DownloadListener -> com.hanaone.tprd.a.h:
+com.hanaone.tpwr.adapter.DownloadListener -> com.hanaone.tpwr.a.h:
     void onFinishNotify(boolean) -> c
-com.hanaone.tprd.adapter.ListAdapterListener -> com.hanaone.tprd.a.i:
+com.hanaone.tpwr.adapter.ListAdapterListener -> com.hanaone.tpwr.a.i:
     void onSelect(int,int) -> a
-com.hanaone.tprd.adapter.ListExamHeaderAdapter -> com.hanaone.tprd.a.j:
+com.hanaone.tpwr.adapter.ListExamHeaderAdapter -> com.hanaone.tpwr.a.j:
     android.content.Context mContext -> a
-    com.hanaone.tprd.adapter.ListLevelListener mListener -> b
+    com.hanaone.tpwr.adapter.ListLevelListener mListener -> b
     java.util.List items -> c
     android.view.LayoutInflater mInflater -> d
     void <init>(android.content.Context) -> <init>
@@ -12718,163 +12734,174 @@ com.hanaone.tprd.adapter.ListExamHeaderAdapter -> com.hanaone.tprd.a.j:
     int getItemViewType(int) -> getItemViewType
     int getViewTypeCount() -> getViewTypeCount
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamHeader -> com.hanaone.tprd.a.k:
-    com.hanaone.tprd.db.ExamDataSet exam -> a
-    void <init>(com.hanaone.tprd.db.ExamDataSet) -> <init>
-    com.hanaone.tprd.db.ExamDataSet getExam() -> a
+com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamHeader -> com.hanaone.tpwr.a.k:
+    com.hanaone.tpwr.db.ExamDataSet exam -> a
+    void <init>(com.hanaone.tpwr.db.ExamDataSet) -> <init>
+    com.hanaone.tpwr.db.ExamDataSet getExam() -> a
     int getViewType() -> b
     android.view.View getView(android.content.Context,android.view.LayoutInflater,android.view.View,android.view.ViewGroup) -> a
-com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamHeader$ViewHolderHeader -> com.hanaone.tprd.a.l:
+com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamHeader$ViewHolderHeader -> com.hanaone.tpwr.a.l:
     android.widget.TextView txtTitle -> a
-    com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamHeader this$1 -> b
-    void <init>(com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamHeader) -> <init>
-    void <init>(com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamHeader,byte) -> <init>
-com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamItem -> com.hanaone.tprd.a.m:
+    com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamHeader this$1 -> b
+    void <init>(com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamHeader) -> <init>
+    void <init>(com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamHeader,byte) -> <init>
+com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamItem -> com.hanaone.tpwr.a.m:
     int getViewType() -> b
     android.view.View getView(android.content.Context,android.view.LayoutInflater,android.view.View,android.view.ViewGroup) -> a
-com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem -> com.hanaone.tprd.a.n:
-    com.hanaone.tprd.db.LevelDataSet level -> a
-    com.hanaone.tprd.adapter.DownloadInfo info -> b
-    com.hanaone.tprd.adapter.ListLevelListener mListener -> c
-    void <init>(com.hanaone.tprd.db.LevelDataSet,com.hanaone.tprd.adapter.DownloadInfo,com.hanaone.tprd.adapter.ListLevelListener) -> <init>
+com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem -> com.hanaone.tpwr.a.n:
+    com.hanaone.tpwr.db.LevelDataSet level -> a
+    com.hanaone.tpwr.adapter.DownloadInfo info -> b
+    com.hanaone.tpwr.adapter.ListLevelListener mListener -> c
+    void <init>(com.hanaone.tpwr.db.LevelDataSet,com.hanaone.tpwr.adapter.DownloadInfo,com.hanaone.tpwr.adapter.ListLevelListener) -> <init>
     int getViewType() -> b
     android.view.View getView(android.content.Context,android.view.LayoutInflater,android.view.View,android.view.ViewGroup) -> a
-    com.hanaone.tprd.adapter.ListLevelListener access$0(com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem) -> a
-    com.hanaone.tprd.db.LevelDataSet access$1(com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem) -> b
-    com.hanaone.tprd.adapter.DownloadInfo access$2(com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem) -> c
-com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem$1 -> com.hanaone.tprd.a.o:
-    com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem this$1 -> a
-    void <init>(com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem) -> <init>
+    com.hanaone.tpwr.adapter.ListLevelListener access$0(com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem) -> a
+    com.hanaone.tpwr.db.LevelDataSet access$1(com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem) -> b
+    com.hanaone.tpwr.adapter.DownloadInfo access$2(com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem) -> c
+com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem$1 -> com.hanaone.tpwr.a.o:
+    com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem this$1 -> a
+    void <init>(com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem$ViewHolderItem -> com.hanaone.tprd.a.p:
+com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem$ViewHolderItem -> com.hanaone.tpwr.a.p:
     android.widget.RelativeLayout layout -> a
     android.widget.TextView txtLabel -> b
     android.widget.ImageView imgIcon -> c
     android.widget.ProgressBar prgBar -> d
     android.widget.TextView txtScore -> e
-    com.hanaone.tprd.adapter.DownloadInfo info -> f
-    com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem this$1 -> g
-    void <init>(com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem) -> <init>
-    void <init>(com.hanaone.tprd.adapter.ListExamHeaderAdapter$ExamLevelItem,byte) -> <init>
-com.hanaone.tprd.adapter.ListExamHeaderAdapter$RowType -> com.hanaone.tprd.a.q:
-    com.hanaone.tprd.adapter.ListExamHeaderAdapter$RowType LIST_ITEM -> a
-    com.hanaone.tprd.adapter.ListExamHeaderAdapter$RowType HEADER_ITEM -> b
-    com.hanaone.tprd.adapter.ListExamHeaderAdapter$RowType[] ENUM$VALUES -> c
+    com.hanaone.tpwr.adapter.DownloadInfo info -> f
+    com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem this$1 -> g
+    void <init>(com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem) -> <init>
+    void <init>(com.hanaone.tpwr.adapter.ListExamHeaderAdapter$ExamLevelItem,byte) -> <init>
+com.hanaone.tpwr.adapter.ListExamHeaderAdapter$RowType -> com.hanaone.tpwr.a.q:
+    com.hanaone.tpwr.adapter.ListExamHeaderAdapter$RowType LIST_ITEM -> a
+    com.hanaone.tpwr.adapter.ListExamHeaderAdapter$RowType HEADER_ITEM -> b
+    com.hanaone.tpwr.adapter.ListExamHeaderAdapter$RowType[] ENUM$VALUES -> c
     void <clinit>() -> <clinit>
     void <init>(java.lang.String,int) -> <init>
-    com.hanaone.tprd.adapter.ListExamHeaderAdapter$RowType[] values() -> values
-    com.hanaone.tprd.adapter.ListExamHeaderAdapter$RowType valueOf(java.lang.String) -> valueOf
-com.hanaone.tprd.adapter.ListLevelListener -> com.hanaone.tprd.a.r:
+    com.hanaone.tpwr.adapter.ListExamHeaderAdapter$RowType[] values() -> values
+    com.hanaone.tpwr.adapter.ListExamHeaderAdapter$RowType valueOf(java.lang.String) -> valueOf
+com.hanaone.tpwr.adapter.ListLevelListener -> com.hanaone.tpwr.a.r:
     void onSelect(int,java.lang.String) -> a
-    void onSelect(com.hanaone.tprd.db.LevelDataSet,com.hanaone.tprd.adapter.DownloadInfo) -> a
-com.hanaone.tprd.adapter.ListResultAdapter -> com.hanaone.tprd.a.s:
+    void onSelect(com.hanaone.tpwr.db.LevelDataSet,com.hanaone.tpwr.adapter.DownloadInfo) -> a
+com.hanaone.tpwr.adapter.ListResultAdapter -> com.hanaone.tpwr.a.s:
     android.content.Context mContext -> a
     android.view.LayoutInflater mInflater -> b
-    com.hanaone.tprd.adapter.ListAdapterListener mListener -> c
+    com.hanaone.tpwr.adapter.ListAdapterListener mListener -> c
     java.util.List dataSets -> d
-    void <init>(android.content.Context,com.hanaone.tprd.adapter.ListAdapterListener) -> <init>
+    void <init>(android.content.Context,com.hanaone.tpwr.adapter.ListAdapterListener) -> <init>
     void setDataSets(java.util.List) -> a
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.hanaone.tprd.adapter.ListResultAdapter$ViewHolder -> com.hanaone.tprd.a.t:
+com.hanaone.tpwr.adapter.ListResultAdapter$ViewHolder -> com.hanaone.tpwr.a.t:
     android.widget.TextView txtNumber -> a
-    android.widget.Button btnChoice -> b
-    android.widget.Button btnAnswer -> c
-    android.widget.TextView txtScore -> d
-    com.hanaone.tprd.adapter.ListResultAdapter this$0 -> e
-    void <init>(com.hanaone.tprd.adapter.ListResultAdapter) -> <init>
-    void <init>(com.hanaone.tprd.adapter.ListResultAdapter,byte) -> <init>
-com.hanaone.tprd.adapter.ListSectionAdapter -> com.hanaone.tprd.a.u:
+    android.widget.TextView txtGoal -> b
+    android.widget.TextView txtYour -> c
+    com.hanaone.tpwr.adapter.ListResultAdapter this$0 -> d
+    void <init>(com.hanaone.tpwr.adapter.ListResultAdapter) -> <init>
+    void <init>(com.hanaone.tpwr.adapter.ListResultAdapter,byte) -> <init>
+com.hanaone.tpwr.adapter.ListSectionAdapter -> com.hanaone.tpwr.a.u:
     android.content.Context mContext -> a
     android.view.LayoutInflater mInflater -> b
-    com.hanaone.tprd.adapter.ListAdapterListener mListener -> c
+    com.hanaone.tpwr.adapter.ListAdapterListener mListener -> c
     java.util.List mDataSet -> d
     java.util.List mItems -> e
-    void <init>(android.content.Context,com.hanaone.tprd.adapter.ListAdapterListener) -> <init>
+    boolean cheat -> f
+    boolean isShowHint -> g
+    void <init>(android.content.Context,com.hanaone.tpwr.adapter.ListAdapterListener) -> <init>
     void setmDataSet(java.util.List) -> a
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-    void showDownloadDialog(com.hanaone.tprd.db.FileDataSet) -> a
+    void showDownloadDialog(com.hanaone.tpwr.db.FileDataSet) -> a
     void onFinishNotify(boolean) -> c
-    android.content.Context access$0(com.hanaone.tprd.adapter.ListSectionAdapter) -> a
-    void access$1(com.hanaone.tprd.adapter.ListSectionAdapter,com.hanaone.tprd.db.QuestionDataSet,int,java.util.List) -> a
-com.hanaone.tprd.adapter.ListSectionAdapter$1 -> com.hanaone.tprd.a.v:
-    com.hanaone.tprd.adapter.ListSectionAdapter this$0 -> a
+    android.content.Context access$0(com.hanaone.tpwr.adapter.ListSectionAdapter) -> a
+    boolean access$1(com.hanaone.tpwr.adapter.ListSectionAdapter) -> b
+    boolean access$2(com.hanaone.tpwr.adapter.ListSectionAdapter) -> c
+    void access$3(com.hanaone.tpwr.adapter.ListSectionAdapter,int) -> a
+com.hanaone.tpwr.adapter.ListSectionAdapter$1 -> com.hanaone.tpwr.a.v:
+    com.hanaone.tpwr.adapter.ListSectionAdapter this$0 -> a
     android.app.Dialog val$dialog -> b
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter,android.app.Dialog) -> <init>
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter,android.app.Dialog) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.adapter.ListSectionAdapter$Item -> com.hanaone.tprd.a.w:
+com.hanaone.tpwr.adapter.ListSectionAdapter$2 -> com.hanaone.tpwr.a.w:
+    com.hanaone.tpwr.adapter.ListSectionAdapter this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter,android.app.Dialog) -> <init>
+    void onClick(android.view.View) -> onClick
+com.hanaone.tpwr.adapter.ListSectionAdapter$Item -> com.hanaone.tpwr.a.x:
     android.view.View getView$624d955d(android.view.LayoutInflater,android.view.View,android.view.ViewGroup) -> a
-com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem -> com.hanaone.tprd.a.x:
-    com.hanaone.tprd.db.SectionDataSet section -> b
-    com.hanaone.tprd.db.QuestionDataSet question -> c
+com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem -> com.hanaone.tpwr.a.y:
+    com.hanaone.tpwr.db.SectionDataSet section -> b
+    com.hanaone.tpwr.db.QuestionDataSet question -> c
     int sectionNumber -> d
     int questionNumber -> e
-    com.hanaone.tprd.adapter.ListSectionAdapter this$0 -> a
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter,com.hanaone.tprd.db.SectionDataSet,com.hanaone.tprd.db.QuestionDataSet,int,int) -> <init>
+    com.hanaone.tpwr.adapter.ListSectionAdapter this$0 -> a
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter,com.hanaone.tpwr.db.SectionDataSet,com.hanaone.tpwr.db.QuestionDataSet,int,int) -> <init>
     android.view.View getView$624d955d(android.view.LayoutInflater,android.view.View,android.view.ViewGroup) -> a
-    com.hanaone.tprd.db.QuestionDataSet access$0(com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem) -> a
-com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem$1 -> com.hanaone.tprd.a.y:
-    com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem this$1 -> a
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem) -> <init>
+    com.hanaone.tpwr.db.QuestionDataSet access$0(com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem) -> a
+com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem$1 -> com.hanaone.tpwr.a.z:
+    com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem this$1 -> a
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem$2 -> com.hanaone.tprd.a.z:
-    com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem this$1 -> a
-    com.hanaone.tprd.db.ChoiceDataSet val$choice -> b
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem,com.hanaone.tprd.db.ChoiceDataSet) -> <init>
+com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem$2 -> com.hanaone.tpwr.a.A:
+    com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem this$1 -> a
+    android.widget.TextView val$txtHint -> b
+    android.widget.Button val$btnHint -> c
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem,android.widget.TextView,android.widget.Button) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem$3 -> com.hanaone.tprd.a.A:
-    com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem this$1 -> a
-    int val$pos -> b
-    com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem$QuestionViewHolder val$holder -> c
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem,int,com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem$QuestionViewHolder) -> <init>
+com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem$3 -> com.hanaone.tpwr.a.B:
+    com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem this$1 -> a
+    android.widget.Button val$btnSave -> b
+    com.hanaone.tpwr.db.ChoiceDataSet val$choice -> c
+    android.widget.EditText val$edtAnswer -> d
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem,android.widget.Button,com.hanaone.tpwr.db.ChoiceDataSet,android.widget.EditText) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem$QuestionViewHolder -> com.hanaone.tprd.a.B:
+com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem$QuestionViewHolder -> com.hanaone.tpwr.a.C:
     android.widget.TextView txtNumber -> a
-    android.widget.TextView txtQuestion -> b
-    android.widget.ImageView imgQuestion -> c
-    android.widget.TextView txtHint -> d
-    java.util.List btnChoices -> e
-    java.util.List txtChoices -> f
-    java.util.List imgChoices -> g
-    com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem this$1 -> h
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem) -> <init>
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter$QuestionItem,byte) -> <init>
-com.hanaone.tprd.adapter.ListSectionAdapter$SectionItem -> com.hanaone.tprd.a.C:
-    com.hanaone.tprd.db.SectionDataSet section -> b
+    android.widget.TextView txtQuestionHint -> b
+    android.widget.TextView txtQuestionTxt -> c
+    android.widget.ImageView imgQuestion -> d
+    android.widget.LinearLayout layoutQuestionAnswer -> e
+    com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem this$1 -> f
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem) -> <init>
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter$QuestionItem,byte) -> <init>
+com.hanaone.tpwr.adapter.ListSectionAdapter$SectionItem -> com.hanaone.tpwr.a.D:
+    com.hanaone.tpwr.db.SectionDataSet section -> b
     int sectionNumber -> c
-    com.hanaone.tprd.adapter.ListSectionAdapter this$0 -> a
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter,com.hanaone.tprd.db.SectionDataSet,int) -> <init>
+    com.hanaone.tpwr.adapter.ListSectionAdapter this$0 -> a
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter,com.hanaone.tpwr.db.SectionDataSet,int) -> <init>
     android.view.View getView$624d955d(android.view.LayoutInflater,android.view.View,android.view.ViewGroup) -> a
-    com.hanaone.tprd.db.SectionDataSet access$0(com.hanaone.tprd.adapter.ListSectionAdapter$SectionItem) -> a
-com.hanaone.tprd.adapter.ListSectionAdapter$SectionItem$1 -> com.hanaone.tprd.a.D:
-    com.hanaone.tprd.adapter.ListSectionAdapter$SectionItem this$1 -> a
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter$SectionItem) -> <init>
+    com.hanaone.tpwr.db.SectionDataSet access$0(com.hanaone.tpwr.adapter.ListSectionAdapter$SectionItem) -> a
+com.hanaone.tpwr.adapter.ListSectionAdapter$SectionItem$1 -> com.hanaone.tpwr.a.E:
+    com.hanaone.tpwr.adapter.ListSectionAdapter$SectionItem this$1 -> a
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter$SectionItem) -> <init>
     void onClick(android.view.View) -> onClick
-com.hanaone.tprd.adapter.ListSectionAdapter$SectionItem$SectionViewHolder -> com.hanaone.tprd.a.E:
+com.hanaone.tpwr.adapter.ListSectionAdapter$SectionItem$SectionViewHolder -> com.hanaone.tpwr.a.F:
     android.widget.TextView txtQuestion -> a
     android.widget.TextView txtHint -> b
     android.widget.ImageView imgQuestion -> c
-    com.hanaone.tprd.adapter.ListSectionAdapter$SectionItem this$1 -> d
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter$SectionItem) -> <init>
-    void <init>(com.hanaone.tprd.adapter.ListSectionAdapter$SectionItem,byte) -> <init>
-com.hanaone.tprd.adapter.QuestionSlideAdapter -> com.hanaone.tprd.a.F:
-    com.hanaone.tprd.db.LevelDataSet mLevel -> a
+    com.hanaone.tpwr.adapter.ListSectionAdapter$SectionItem this$1 -> d
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter$SectionItem) -> <init>
+    void <init>(com.hanaone.tpwr.adapter.ListSectionAdapter$SectionItem,byte) -> <init>
+com.hanaone.tpwr.adapter.QuestionSlideAdapter -> com.hanaone.tpwr.a.G:
+    com.hanaone.tpwr.db.LevelDataSet mLevel -> a
     java.lang.String mMode -> b
-    void <init>(android.support.v4.app.FragmentManager,com.hanaone.tprd.db.LevelDataSet,java.lang.String) -> <init>
+    void <init>(android.support.v4.app.FragmentManager,com.hanaone.tpwr.db.LevelDataSet,java.lang.String) -> <init>
     android.support.v4.app.Fragment getItem(int) -> a
     int getCount() -> c
-com.hanaone.tprd.db.ChoiceDataSet -> com.hanaone.tprd.db.ChoiceDataSet:
+com.hanaone.tpwr.db.ChoiceDataSet -> com.hanaone.tpwr.db.ChoiceDataSet:
     int id -> a
     int number -> b
     java.lang.String type -> c
     java.lang.String label -> d
     java.lang.String content -> e
-    com.hanaone.tprd.db.FileDataSet img -> f
+    com.hanaone.tpwr.db.FileDataSet img -> f
+    java.lang.String answer -> g
+    int goalMin -> h
+    int goalMax -> i
     android.os.Parcelable$Creator CREATOR -> CREATOR
     void <clinit>() -> <clinit>
     void <init>() -> <init>
@@ -12886,18 +12913,24 @@ com.hanaone.tprd.db.ChoiceDataSet -> com.hanaone.tprd.db.ChoiceDataSet:
     void setLabel(java.lang.String) -> b
     java.lang.String getContent() -> c
     void setContent(java.lang.String) -> c
-    com.hanaone.tprd.db.FileDataSet getImg() -> d
-    void setImg(com.hanaone.tprd.db.FileDataSet) -> a
+    com.hanaone.tpwr.db.FileDataSet getImg() -> d
+    void setImg(com.hanaone.tpwr.db.FileDataSet) -> a
+    java.lang.String getAnswer() -> e
+    void setAnswer(java.lang.String) -> d
+    int getGoalMin() -> f
+    void setGoalMin(int) -> c
+    int getGoalMax() -> g
+    void setGoalMax(int) -> d
     int describeContents() -> describeContents
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
     void <init>(android.os.Parcel) -> <init>
-    com.hanaone.tprd.db.model.Model toModel() -> e
+    com.hanaone.tpwr.db.model.Model toModel() -> h
     void <init>(android.os.Parcel,byte) -> <init>
-com.hanaone.tprd.db.ChoiceDataSet$1 -> com.hanaone.tprd.db.a:
+com.hanaone.tpwr.db.ChoiceDataSet$1 -> com.hanaone.tpwr.db.a:
     void <init>() -> <init>
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
-com.hanaone.tprd.db.ExamDataSet -> com.hanaone.tprd.db.ExamDataSet:
+com.hanaone.tpwr.db.ExamDataSet -> com.hanaone.tpwr.db.ExamDataSet:
     int number -> a
     java.lang.String date -> b
     java.util.List levels -> c
@@ -12912,13 +12945,13 @@ com.hanaone.tprd.db.ExamDataSet -> com.hanaone.tprd.db.ExamDataSet:
     int describeContents() -> describeContents
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
     void <init>(android.os.Parcel) -> <init>
-    com.hanaone.tprd.db.model.Model toModel() -> e
+    com.hanaone.tpwr.db.model.Model toModel() -> h
     void <init>(android.os.Parcel,byte) -> <init>
-com.hanaone.tprd.db.ExamDataSet$1 -> com.hanaone.tprd.db.b:
+com.hanaone.tpwr.db.ExamDataSet$1 -> com.hanaone.tpwr.db.b:
     void <init>() -> <init>
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
-com.hanaone.tprd.db.FileDataSet -> com.hanaone.tprd.db.FileDataSet:
+com.hanaone.tpwr.db.FileDataSet -> com.hanaone.tpwr.db.FileDataSet:
     int id -> a
     java.lang.String type -> b
     java.lang.String name -> c
@@ -12941,20 +12974,20 @@ com.hanaone.tprd.db.FileDataSet -> com.hanaone.tprd.db.FileDataSet:
     int describeContents() -> describeContents
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
     void <init>(android.os.Parcel) -> <init>
-    com.hanaone.tprd.db.model.Model toModel() -> e
+    com.hanaone.tpwr.db.model.Model toModel() -> h
     void <init>(android.os.Parcel,byte) -> <init>
-com.hanaone.tprd.db.FileDataSet$1 -> com.hanaone.tprd.db.c:
+com.hanaone.tpwr.db.FileDataSet$1 -> com.hanaone.tpwr.db.c:
     void <init>() -> <init>
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
-com.hanaone.tprd.db.LevelDataSet -> com.hanaone.tprd.db.LevelDataSet:
+com.hanaone.tpwr.db.LevelDataSet -> com.hanaone.tpwr.db.LevelDataSet:
     int id -> a
     int number -> b
     java.lang.String label -> c
     java.util.List sections -> d
     int active -> e
-    com.hanaone.tprd.db.FileDataSet txt -> f
-    com.hanaone.tprd.db.FileDataSet pdf -> g
+    com.hanaone.tpwr.db.FileDataSet txt -> f
+    com.hanaone.tpwr.db.FileDataSet pdf -> g
     int score -> h
     int maxScore -> i
     int color -> j
@@ -12971,12 +13004,12 @@ com.hanaone.tprd.db.LevelDataSet -> com.hanaone.tprd.db.LevelDataSet:
     void setLabel(java.lang.String) -> a
     java.util.List getSections() -> d
     void setSections(java.util.List) -> a
-    int getActive() -> f
+    int getActive() -> e
     void setActive(int) -> c
-    com.hanaone.tprd.db.FileDataSet getPdf() -> g
-    void setPdf(com.hanaone.tprd.db.FileDataSet) -> a
-    com.hanaone.tprd.db.FileDataSet getTxt() -> h
-    void setTxt(com.hanaone.tprd.db.FileDataSet) -> b
+    com.hanaone.tpwr.db.FileDataSet getPdf() -> f
+    void setPdf(com.hanaone.tpwr.db.FileDataSet) -> a
+    com.hanaone.tpwr.db.FileDataSet getTxt() -> g
+    void setTxt(com.hanaone.tpwr.db.FileDataSet) -> b
     int getScore() -> i
     void setScore(int) -> d
     int getMaxScore() -> j
@@ -12990,14 +13023,14 @@ com.hanaone.tprd.db.LevelDataSet -> com.hanaone.tprd.db.LevelDataSet:
     int describeContents() -> describeContents
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
     void <init>(android.os.Parcel) -> <init>
-    com.hanaone.tprd.db.model.Model toModel() -> e
-com.hanaone.tprd.db.LevelDataSet$1 -> com.hanaone.tprd.db.d:
+    com.hanaone.tpwr.db.model.Model toModel() -> h
+com.hanaone.tpwr.db.LevelDataSet$1 -> com.hanaone.tpwr.db.d:
     void <init>() -> <init>
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
-com.hanaone.tprd.db.Pojo -> com.hanaone.tprd.db.e:
-    com.hanaone.tprd.db.model.Model toModel() -> e
-com.hanaone.tprd.db.QuestionDataSet -> com.hanaone.tprd.db.QuestionDataSet:
+com.hanaone.tpwr.db.Pojo -> com.hanaone.tpwr.db.e:
+    com.hanaone.tpwr.db.model.Model toModel() -> h
+com.hanaone.tpwr.db.QuestionDataSet -> com.hanaone.tpwr.db.QuestionDataSet:
     int id -> a
     int number -> b
     int mark -> c
@@ -13007,70 +13040,71 @@ com.hanaone.tprd.db.QuestionDataSet -> com.hanaone.tprd.db.QuestionDataSet:
     int choice -> g
     java.lang.String type -> h
     java.lang.String hint -> i
-    com.hanaone.tprd.db.FileDataSet img -> j
+    com.hanaone.tpwr.db.FileDataSet img -> j
     android.os.Parcelable$Creator CREATOR -> CREATOR
     void <clinit>() -> <clinit>
     void <init>() -> <init>
+    int getId() -> a
     void setId(int) -> a
-    int getNumber() -> a
+    int getNumber() -> b
     void setNumber(int) -> b
-    int getMark() -> b
+    int getMark() -> c
     void setMark(int) -> c
-    java.lang.String getText() -> c
+    java.lang.String getText() -> d
     void setText(java.lang.String) -> a
-    java.util.List getChoices() -> d
+    java.util.List getChoices() -> e
     void setChoices(java.util.List) -> a
-    int getAnswer() -> f
     void setAnswer(int) -> d
-    java.lang.String getType() -> g
+    java.lang.String getType() -> f
     void setType(java.lang.String) -> b
-    java.lang.String getHint() -> h
+    java.lang.String getHint() -> g
     void setHint(java.lang.String) -> c
-    int getChoice() -> i
-    void setChoice(int) -> e
-    com.hanaone.tprd.db.FileDataSet getImg() -> j
-    void setImg(com.hanaone.tprd.db.FileDataSet) -> a
+    com.hanaone.tpwr.db.FileDataSet getImg() -> i
+    void setImg(com.hanaone.tpwr.db.FileDataSet) -> a
     int describeContents() -> describeContents
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
     void <init>(android.os.Parcel) -> <init>
-    com.hanaone.tprd.db.model.Model toModel() -> e
-com.hanaone.tprd.db.QuestionDataSet$1 -> com.hanaone.tprd.db.f:
+    com.hanaone.tpwr.db.model.Model toModel() -> h
+com.hanaone.tpwr.db.QuestionDataSet$1 -> com.hanaone.tpwr.db.f:
     void <init>() -> <init>
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
-com.hanaone.tprd.db.ResultDataSet -> com.hanaone.tprd.db.ResultDataSet:
+com.hanaone.tpwr.db.ResultDataSet -> com.hanaone.tpwr.db.ResultDataSet:
     int number -> a
-    int choice -> b
-    int answer -> c
-    int score -> d
+    java.lang.String label -> b
+    int goalMin -> c
+    int goalMax -> d
+    int finish -> e
     android.os.Parcelable$Creator CREATOR -> CREATOR
     void <clinit>() -> <clinit>
     void <init>() -> <init>
     int getNumber() -> a
     void setNumber(int) -> a
-    int getChoice() -> b
-    void setChoice(int) -> b
-    int getAnswer() -> c
-    void setAnswer(int) -> c
+    java.lang.String getLabel() -> b
+    void setLabel(java.lang.String) -> a
     int describeContents() -> describeContents
-    int getScore() -> d
-    void setScore(int) -> d
+    int getGoalMin() -> c
+    void setGoalMin(int) -> b
+    int getGoalMax() -> d
+    void setGoalMax(int) -> c
+    int getFinish() -> e
+    void setFinish(int) -> d
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
     void <init>(android.os.Parcel) -> <init>
-    com.hanaone.tprd.db.model.Model toModel() -> e
+    com.hanaone.tpwr.db.model.Model toModel() -> h
     void <init>(android.os.Parcel,byte) -> <init>
-com.hanaone.tprd.db.ResultDataSet$1 -> com.hanaone.tprd.db.g:
+com.hanaone.tpwr.db.ResultDataSet$1 -> com.hanaone.tpwr.db.g:
     void <init>() -> <init>
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
-com.hanaone.tprd.db.SectionDataSet -> com.hanaone.tprd.db.SectionDataSet:
+com.hanaone.tpwr.db.SectionDataSet -> com.hanaone.tpwr.db.SectionDataSet:
     int id -> a
     int number -> b
     java.lang.String text -> c
     java.lang.String hint -> d
     java.util.List questions -> e
     java.lang.String type -> f
-    com.hanaone.tprd.db.FileDataSet img -> g
+    com.hanaone.tpwr.db.FileDataSet img -> g
     android.os.Parcelable$Creator CREATOR -> CREATOR
     void <clinit>() -> <clinit>
     void <init>() -> <init>
@@ -13083,19 +13117,19 @@ com.hanaone.tprd.db.SectionDataSet -> com.hanaone.tprd.db.SectionDataSet:
     void setQuestions(java.util.List) -> a
     java.lang.String getHint() -> d
     void setHint(java.lang.String) -> b
-    java.lang.String getType() -> f
+    java.lang.String getType() -> e
     void setType(java.lang.String) -> c
-    com.hanaone.tprd.db.FileDataSet getImg() -> g
-    void setImg(com.hanaone.tprd.db.FileDataSet) -> a
+    com.hanaone.tpwr.db.FileDataSet getImg() -> f
+    void setImg(com.hanaone.tpwr.db.FileDataSet) -> a
     int describeContents() -> describeContents
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
     void <init>(android.os.Parcel) -> <init>
-    com.hanaone.tprd.db.model.Model toModel() -> e
-com.hanaone.tprd.db.SectionDataSet$1 -> com.hanaone.tprd.db.h:
+    com.hanaone.tpwr.db.model.Model toModel() -> h
+com.hanaone.tpwr.db.SectionDataSet$1 -> com.hanaone.tpwr.db.h:
     void <init>() -> <init>
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
-com.hanaone.tprd.db.model.Choice -> com.hanaone.tprd.db.a.a:
+com.hanaone.tpwr.db.model.Choice -> com.hanaone.tpwr.db.a.a:
     int id -> a
     int number -> b
     java.lang.String type -> c
@@ -13103,6 +13137,9 @@ com.hanaone.tprd.db.model.Choice -> com.hanaone.tprd.db.a.a:
     java.lang.String content -> e
     int file_id -> f
     int question_id -> g
+    java.lang.String answer -> h
+    int goalMin -> i
+    int goalMax -> j
     void <init>() -> <init>
     int getId() -> a
     void setId(int) -> a
@@ -13118,8 +13155,14 @@ com.hanaone.tprd.db.model.Choice -> com.hanaone.tprd.db.a.a:
     void setFile_id(int) -> c
     int getQuestion_id() -> g
     void setQuestion_id(int) -> d
-    com.hanaone.tprd.db.Pojo toPojo() -> h
-com.hanaone.tprd.db.model.ExamLevel -> com.hanaone.tprd.db.a.b:
+    java.lang.String getAnswer() -> h
+    void setAnswer(java.lang.String) -> d
+    int getGoalMin() -> i
+    void setGoalMin(int) -> e
+    int getGoalMax() -> j
+    void setGoalMax(int) -> f
+    com.hanaone.tpwr.db.Pojo toPojo() -> k
+com.hanaone.tpwr.db.model.ExamLevel -> com.hanaone.tpwr.db.a.b:
     int id -> a
     int exam_id -> b
     int number -> c
@@ -13146,16 +13189,16 @@ com.hanaone.tprd.db.model.ExamLevel -> com.hanaone.tprd.db.a.b:
     void setActive(int) -> e
     int getTxt_id() -> g
     void setTxt_id(int) -> f
-    int getScore() -> i
+    int getScore() -> h
     void setScore(int) -> g
-    int getMaxScore() -> j
+    int getMaxScore() -> i
     void setMaxScore(int) -> h
-    int getColor() -> k
+    int getColor() -> j
     void setColor(int) -> i
     int getTime() -> l
     void setTime(int) -> j
-    com.hanaone.tprd.db.Pojo toPojo() -> h
-com.hanaone.tprd.db.model.Examination -> com.hanaone.tprd.db.a.c:
+    com.hanaone.tpwr.db.Pojo toPojo() -> k
+com.hanaone.tpwr.db.model.Examination -> com.hanaone.tpwr.db.a.c:
     int number -> a
     java.lang.String date -> b
     void <init>() -> <init>
@@ -13163,8 +13206,8 @@ com.hanaone.tprd.db.model.Examination -> com.hanaone.tprd.db.a.c:
     void setNumber(int) -> a
     java.lang.String getDate() -> b
     void setDate(java.lang.String) -> a
-    com.hanaone.tprd.db.Pojo toPojo() -> h
-com.hanaone.tprd.db.model.FileExtra -> com.hanaone.tprd.db.a.d:
+    com.hanaone.tpwr.db.Pojo toPojo() -> k
+com.hanaone.tpwr.db.model.FileExtra -> com.hanaone.tpwr.db.a.d:
     int id -> a
     java.lang.String type -> b
     java.lang.String name -> c
@@ -13184,10 +13227,10 @@ com.hanaone.tprd.db.model.FileExtra -> com.hanaone.tprd.db.a.d:
     void setName(java.lang.String) -> d
     long getSize() -> f
     void setSize(long) -> a
-    com.hanaone.tprd.db.Pojo toPojo() -> h
-com.hanaone.tprd.db.model.Model -> com.hanaone.tprd.db.a.e:
-    com.hanaone.tprd.db.Pojo toPojo() -> h
-com.hanaone.tprd.db.model.Question -> com.hanaone.tprd.db.a.f:
+    com.hanaone.tpwr.db.Pojo toPojo() -> k
+com.hanaone.tpwr.db.model.Model -> com.hanaone.tpwr.db.a.e:
+    com.hanaone.tpwr.db.Pojo toPojo() -> k
+com.hanaone.tpwr.db.model.Question -> com.hanaone.tpwr.db.a.f:
     int id -> a
     int number -> b
     int mark -> c
@@ -13212,12 +13255,12 @@ com.hanaone.tprd.db.model.Question -> com.hanaone.tprd.db.a.f:
     void setAnswer(int) -> e
     java.lang.String getType() -> g
     void setType(java.lang.String) -> b
-    java.lang.String getHint() -> i
+    java.lang.String getHint() -> h
     void setHint(java.lang.String) -> c
-    int getImg_id() -> j
+    int getImg_id() -> i
     void setImg_id(int) -> f
-    com.hanaone.tprd.db.Pojo toPojo() -> h
-com.hanaone.tprd.db.model.Section -> com.hanaone.tprd.db.a.g:
+    com.hanaone.tpwr.db.Pojo toPojo() -> k
+com.hanaone.tpwr.db.model.Section -> com.hanaone.tpwr.db.a.g:
     int id -> a
     int number -> b
     java.lang.String text -> c
@@ -13240,50 +13283,157 @@ com.hanaone.tprd.db.model.Section -> com.hanaone.tprd.db.a.g:
     void setType(java.lang.String) -> c
     int getImg_id() -> g
     void setImg_id(int) -> d
-    com.hanaone.tprd.db.Pojo toPojo() -> h
-com.hanaone.tprd.util.ColorUtils -> com.hanaone.tprd.b.a:
+    com.hanaone.tpwr.db.Pojo toPojo() -> k
+com.hanaone.tpwr.util.ColorUtils -> com.hanaone.tpwr.b.a:
     int randomColor$2e72c07f() -> a
-com.hanaone.tprd.util.DatabaseUtils -> com.hanaone.tprd.b.b:
-    com.hanaone.tprd.db.model.Model pojo2Model(com.hanaone.tprd.db.Pojo) -> a
-    com.hanaone.tprd.db.Pojo model2Pojo(com.hanaone.tprd.db.model.Model) -> a
-com.hanaone.tprd.util.ImageUtils -> com.hanaone.tprd.b.c:
+com.hanaone.tpwr.util.DatabaseUtils -> com.hanaone.tpwr.b.b:
+    com.hanaone.tpwr.db.model.Model pojo2Model(com.hanaone.tpwr.db.Pojo) -> a
+    com.hanaone.tpwr.db.Pojo model2Pojo(com.hanaone.tpwr.db.model.Model) -> a
+com.hanaone.tpwr.util.ImageUtils -> com.hanaone.tpwr.b.c:
     int calculateInSampleSize(android.graphics.BitmapFactory$Options,int,int) -> a
-    android.graphics.Bitmap decodeSampledBitmapFromResource$7a5a1b5(android.content.res.Resources,int,int) -> a
     android.graphics.Bitmap decodeSampledBitmapFromFile(java.lang.String,int,int) -> a
-com.hanaone.tprd.util.LocaleUtils -> com.hanaone.tprd.b.d:
+com.hanaone.tpwr.util.LocaleUtils -> com.hanaone.tpwr.b.d:
     void setLocale(android.content.Context,int) -> a
-com.hanaone.tprd.util.PreferenceHandler -> com.hanaone.tprd.b.e:
+com.hanaone.tpwr.util.PreferenceHandler -> com.hanaone.tpwr.b.e:
+    void setHintDisplayPreference(android.content.Context,boolean) -> a
+    boolean getHintDisplayPreference(android.content.Context) -> c
     void setQuestionModePreference(android.content.Context,java.lang.String) -> b
-    java.lang.String getQuestionModePreference(android.content.Context) -> c
+    java.lang.String getQuestionModePreference(android.content.Context) -> d
     void setLanguagePositionPreference(android.content.Context,int) -> a
-    int getLanguagePositionPreference(android.content.Context) -> d
-com.hanaone.tprd.view.DigitalClockView -> com.hanaone.tprd.view.DigitalClockView:
+    int getLanguagePositionPreference(android.content.Context) -> e
+com.hanaone.tpwr.view.DigitalClockView -> com.hanaone.tpwr.view.DigitalClockView:
     int _xDelta -> a
     int _yDelta -> b
     java.util.Timer timer -> c
     long time -> d
-    com.hanaone.tprd.QuestionActivity questionActivity -> e
+    com.hanaone.tpwr.QuestionActivity questionActivity -> e
     boolean pause -> f
     android.os.Handler mHander -> g
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    void start(long,com.hanaone.tprd.QuestionActivity) -> a
+    void start(long,com.hanaone.tpwr.QuestionActivity) -> a
     void cancel() -> a
     void pause() -> b
     void resume() -> c
     boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
-    long access$0(com.hanaone.tprd.view.DigitalClockView) -> a
-    void access$1(com.hanaone.tprd.view.DigitalClockView,long) -> a
-    java.lang.String access$2$537a9b67(long) -> a
-    java.util.Timer access$3(com.hanaone.tprd.view.DigitalClockView) -> b
-    com.hanaone.tprd.QuestionActivity access$4(com.hanaone.tprd.view.DigitalClockView) -> c
-    boolean access$5(com.hanaone.tprd.view.DigitalClockView) -> d
-    android.os.Handler access$6(com.hanaone.tprd.view.DigitalClockView) -> e
-com.hanaone.tprd.view.DigitalClockView$1 -> com.hanaone.tprd.view.a:
-    com.hanaone.tprd.view.DigitalClockView this$0 -> a
-    void <init>(com.hanaone.tprd.view.DigitalClockView) -> <init>
+    long access$0(com.hanaone.tpwr.view.DigitalClockView) -> a
+    void access$1(com.hanaone.tpwr.view.DigitalClockView,long) -> a
+    java.lang.String access$2$5a96f450(long) -> a
+    java.util.Timer access$3(com.hanaone.tpwr.view.DigitalClockView) -> b
+    com.hanaone.tpwr.QuestionActivity access$4(com.hanaone.tpwr.view.DigitalClockView) -> c
+    boolean access$5(com.hanaone.tpwr.view.DigitalClockView) -> d
+    android.os.Handler access$6(com.hanaone.tpwr.view.DigitalClockView) -> e
+com.hanaone.tpwr.view.DigitalClockView$1 -> com.hanaone.tpwr.view.a:
+    com.hanaone.tpwr.view.DigitalClockView this$0 -> a
+    void <init>(com.hanaone.tpwr.view.DigitalClockView) -> <init>
     void handleMessage(android.os.Message) -> handleMessage
-com.hanaone.tprd.view.DigitalClockView$ClockTimer -> com.hanaone.tprd.view.b:
-    com.hanaone.tprd.view.DigitalClockView this$0 -> a
-    void <init>(com.hanaone.tprd.view.DigitalClockView) -> <init>
+com.hanaone.tpwr.view.DigitalClockView$ClockTimer -> com.hanaone.tpwr.view.b:
+    com.hanaone.tpwr.view.DigitalClockView this$0 -> a
+    void <init>(com.hanaone.tpwr.view.DigitalClockView) -> <init>
     void run() -> run
-    void <init>(com.hanaone.tprd.view.DigitalClockView,byte) -> <init>
+    void <init>(com.hanaone.tpwr.view.DigitalClockView,byte) -> <init>
+com.kyleduo.switchbutton.ColorUtils -> com.kyleduo.switchbutton.a:
+    int ENABLE_ATTR -> ENABLE_ATTR
+    int CHECKED_ATTR -> CHECKED_ATTR
+    int PRESSED_ATTR -> PRESSED_ATTR
+    void <init>() -> <init>
+    android.content.res.ColorStateList generateThumbColorWithTintColor(int) -> generateThumbColorWithTintColor
+    android.content.res.ColorStateList generateBackColorWithTintColor(int) -> generateBackColorWithTintColor
+com.kyleduo.switchbutton.SwitchButton -> com.kyleduo.switchbutton.SwitchButton:
+    float DEFAULT_BACK_MEASURE_RATIO -> DEFAULT_BACK_MEASURE_RATIO
+    int DEFAULT_THUMB_SIZE_DP -> DEFAULT_THUMB_SIZE_DP
+    int DEFAULT_THUMB_MARGIN_DP -> DEFAULT_THUMB_MARGIN_DP
+    int DEFAULT_ANIMATION_DURATION -> DEFAULT_ANIMATION_DURATION
+    int DEFAULT_TINT_COLOR -> DEFAULT_TINT_COLOR
+    int[] CHECKED_PRESSED_STATE -> CHECKED_PRESSED_STATE
+    int[] UNCHECKED_PRESSED_STATE -> UNCHECKED_PRESSED_STATE
+    android.graphics.drawable.Drawable mThumbDrawable -> mThumbDrawable
+    android.graphics.drawable.Drawable mBackDrawable -> mBackDrawable
+    android.content.res.ColorStateList mBackColor -> mBackColor
+    android.content.res.ColorStateList mThumbColor -> mThumbColor
+    float mThumbRadius -> mThumbRadius
+    float mBackRadius -> mBackRadius
+    android.graphics.RectF mThumbMargin -> mThumbMargin
+    float mBackMeasureRatio -> mBackMeasureRatio
+    long mAnimationDuration -> mAnimationDuration
+    boolean mFadeBack -> mFadeBack
+    int mTintColor -> mTintColor
+    android.graphics.PointF mThumbSizeF -> mThumbSizeF
+    int mCurrThumbColor -> mCurrThumbColor
+    int mCurrBackColor -> mCurrBackColor
+    int mNextBackColor -> mNextBackColor
+    android.graphics.drawable.Drawable mCurrentBackDrawable -> mCurrentBackDrawable
+    android.graphics.drawable.Drawable mNextBackDrawable -> mNextBackDrawable
+    android.graphics.RectF mThumbRectF -> mThumbRectF
+    android.graphics.RectF mBackRectF -> mBackRectF
+    android.graphics.RectF mSafeRectF -> mSafeRectF
+    android.graphics.Paint mPaint -> mPaint
+    boolean mIsThumbUseDrawable -> mIsThumbUseDrawable
+    boolean mIsBackUseDrawable -> mIsBackUseDrawable
+    boolean mDrawDebugRect -> mDrawDebugRect
+    android.animation.ObjectAnimator mProcessAnimator -> mProcessAnimator
+    float mProcess -> mProcess
+    android.graphics.RectF mPresentThumbRectF -> mPresentThumbRectF
+    float mStartX -> mStartX
+    float mStartY -> mStartY
+    float mLastX -> mLastX
+    int mTouchSlop -> mTouchSlop
+    int mClickTimeout -> mClickTimeout
+    android.graphics.Paint mRectPaint -> mRectPaint
+    void <clinit>() -> <clinit>
+    void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    void <init>(android.content.Context) -> <init>
+    void init(android.util.AttributeSet) -> init
+    void onMeasure(int,int) -> onMeasure
+    int measureWidth(int) -> measureWidth
+    int measureHeight(int) -> measureHeight
+    void onSizeChanged(int,int,int,int) -> onSizeChanged
+    void setup() -> setup
+    void onDraw(android.graphics.Canvas) -> onDraw
+    void drawableStateChanged() -> drawableStateChanged
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    boolean getStatusBasedOnPos() -> getStatusBasedOnPos
+    float getProcess() -> getProcess
+    void setProcess(float) -> setProcess
+    boolean performClick() -> performClick
+    void animateToState(boolean) -> animateToState
+    void catchView() -> catchView
+    void setChecked(boolean) -> setChecked
+    void setCheckedImmediately(boolean) -> setCheckedImmediately
+    void toggleImmediately() -> toggleImmediately
+    void setDrawableState(android.graphics.drawable.Drawable) -> setDrawableState
+    boolean isDrawDebugRect() -> isDrawDebugRect
+    void setDrawDebugRect(boolean) -> setDrawDebugRect
+    long getAnimationDuration() -> getAnimationDuration
+    void setAnimationDuration(long) -> setAnimationDuration
+    android.graphics.drawable.Drawable getThumbDrawable() -> getThumbDrawable
+    void setThumbDrawable(android.graphics.drawable.Drawable) -> setThumbDrawable
+    void setThumbDrawableRes(int) -> setThumbDrawableRes
+    android.graphics.drawable.Drawable getBackDrawable() -> getBackDrawable
+    void setBackDrawable(android.graphics.drawable.Drawable) -> setBackDrawable
+    void setBackDrawableRes(int) -> setBackDrawableRes
+    android.content.res.ColorStateList getBackColor() -> getBackColor
+    void setBackColor(android.content.res.ColorStateList) -> setBackColor
+    void setBackColorRes(int) -> setBackColorRes
+    android.content.res.ColorStateList getThumbColor() -> getThumbColor
+    void setThumbColor(android.content.res.ColorStateList) -> setThumbColor
+    void setThumbColorRes(int) -> setThumbColorRes
+    float getBackMeasureRatio() -> getBackMeasureRatio
+    void setBackMeasureRatio(float) -> setBackMeasureRatio
+    android.graphics.RectF getThumbMargin() -> getThumbMargin
+    void setThumbMargin(android.graphics.RectF) -> setThumbMargin
+    void setThumbMargin(float,float,float,float) -> setThumbMargin
+    void setThumbSize(float,float) -> setThumbSize
+    float getThumbWidth() -> getThumbWidth
+    float getThumbHeight() -> getThumbHeight
+    void setThumbSize(android.graphics.PointF) -> setThumbSize
+    android.graphics.PointF getThumbSizeF() -> getThumbSizeF
+    float getThumbRadius() -> getThumbRadius
+    void setThumbRadius(float) -> setThumbRadius
+    android.graphics.PointF getBackSizeF() -> getBackSizeF
+    float getBackRadius() -> getBackRadius
+    void setBackRadius(float) -> setBackRadius
+    boolean isFadeBack() -> isFadeBack
+    void setFadeBack(boolean) -> setFadeBack
+    int getTintColor() -> getTintColor
+    void setTintColor(int) -> setTintColor

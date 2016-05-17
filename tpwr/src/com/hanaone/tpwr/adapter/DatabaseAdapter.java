@@ -300,11 +300,7 @@ public class DatabaseAdapter{
 		levelData.setLabel(level + "");
 		levelData.setActive(Constants.STATUS_ACTIVE);
 		levelData.setScore(100);
-		if(1 == level){
-			levelData.setTime(60);
-		} else {
-			levelData.setTime(70);
-		}
+		levelData.setTime(60);
 		
 		
 		List<SectionDataSet> sections = new ArrayList<SectionDataSet>();
@@ -315,8 +311,8 @@ public class DatabaseAdapter{
 		
 		Random random = new Random();
 		
-		// question 1 - 20
-		for(int i = 1; i < 21; i ++){
+		// question 51 - 52
+		for(int i = 0; i < 1; i ++){
 			SectionDataSet section = new SectionDataSet();			
 			section.setNumber(i);
 			List<QuestionDataSet> questionDatasets = new ArrayList<QuestionDataSet>();
@@ -363,8 +359,8 @@ public class DatabaseAdapter{
 			
 		}	
 		
-		// question 21 - 30
-		for(int i = 6; i < 21; i ++){
+		// question 53 - 54
+		for(int i = 1; i < 4; i ++){
 			List<Section> sectionModels = this.dbHelper.selectSectionByExamLevelandSectionNumber(35, level, i);
 			if(sectionModels != null && sectionModels.size() >  0){
 				int rdIdx = random.nextInt(sectionModels.size());
@@ -412,7 +408,7 @@ public class DatabaseAdapter{
 		return levelData;
 	}
 	public boolean checkLevel(int level){
-		List<Question> questionModels = this.dbHelper.selectionQuestionByExamLevelAndQuestionNumber(35, level, 1);	
+		List<Question> questionModels = this.dbHelper.selectionQuestionByExamLevelAndQuestionNumber(35, level, 51);	
 		if(questionModels.size() == 0){
 			return false;
 		}
@@ -426,10 +422,11 @@ public class DatabaseAdapter{
 		}
 		return -1;
 	}
-	public int updateChoice(ChoiceDataSet choice){
+	public int updateChoice(ChoiceDataSet choice, int questionId){
 		if(choice == null) return -1;
 		
 		Choice choiceModel = (Choice) DatabaseUtils.pojo2Model(choice);
+		choiceModel.setQuestion_id(questionId);
 		if(choiceModel != null){
 			return this.dbHelper.update(choiceModel);
 		}
